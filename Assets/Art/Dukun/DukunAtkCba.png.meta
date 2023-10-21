@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: cb8e5345b2732f746887c50e313d47ad
+guid: 670a959ad272dab408d62cd40efe9b8d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: DukunAtk (1)_0
+      name: DukunAtkCba_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 2290
-        width: 371
-        height: 615
+        x: 21
+        y: 2882
+        width: 397
+        height: 618
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 51caa6f19567d914685191dce8db06b6
-      internalID: -552973480
+      spriteID: 01f6579e9737461409ee4cf8077f74d9
+      internalID: -1664681679
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DukunAtk (1)_1
+      name: DukunAtkCba_1
       rect:
         serializedVersion: 2
-        x: 672
-        y: 2290
-        width: 371
-        height: 616
+        x: 695
+        y: 2878
+        width: 397
+        height: 618
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9a3d146a439b4e34f95bb614c1887966
-      internalID: -663898602
+      spriteID: b4d759d8d20b4ff469b28c4fea77b9f3
+      internalID: 1656238546
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DukunAtk (1)_2
+      name: DukunAtkCba_2
       rect:
         serializedVersion: 2
-        x: 1412
-        y: 2290
-        width: 371
-        height: 616
+        x: 1434
+        y: 2878
+        width: 397
+        height: 618
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 07fed2b38c4ee4b4a932d2db82579846
-      internalID: 476862386
+      spriteID: d48233ca21e0e0d4f99a1732886e6db5
+      internalID: 1533328680
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DukunAtk (1)_3
+      name: DukunAtkCba_3
       rect:
         serializedVersion: 2
-        x: 2021
-        y: 2290
-        width: 371
-        height: 616
+        x: 2041
+        y: 2880
+        width: 397
+        height: 618
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +187,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cfb763826cff81042b36794639db8aff
-      internalID: -1957987869
+      spriteID: fa7f11710005e2c43a6a2e62058a0fcf
+      internalID: -1008715644
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DukunAtk (1)_4
+      name: DukunAtkCba_4
       rect:
         serializedVersion: 2
-        x: 50
-        y: 1482
-        width: 444
-        height: 733
+        x: 74
+        y: 2075
+        width: 547
+        height: 736
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,20 +208,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7407473a693426140a3ba806c89137c8
-      internalID: 1328821369
+      spriteID: 68025d4b9ff45164f9cdce58e53c271b
+      internalID: 385162906
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DukunAtk (1)_5
+      name: DukunAtkCba_5
       rect:
         serializedVersion: 2
-        x: 772
-        y: 1482
-        width: 444
-        height: 733
+        x: 794
+        y: 2081
+        width: 547
+        height: 736
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,20 +229,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ad15c98c97d7ee945bda51484df31925
-      internalID: -1744504250
+      spriteID: 5082d1d4dc67f7043aac3327db086b49
+      internalID: 476363278
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DukunAtk (1)_6
+      name: DukunAtkCba_6
       rect:
         serializedVersion: 2
-        x: 1479
-        y: 1482
-        width: 444
-        height: 733
+        x: 1513
+        y: 2072
+        width: 547
+        height: 736
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,82 +250,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 13d1721256c4e7e4b86fbc2123cfe2a3
-      internalID: -863056859
+      spriteID: 710fa6ebd597bb641910fc4d5dc5b153
+      internalID: 783361142
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DukunAtk (1)_7
+      name: DukunAtkCba_7
       rect:
         serializedVersion: 2
-        x: 1843
-        y: 1959
-        width: 13
-        height: 13
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7605d1a70a95c1940851e8822bb90f9d
-      internalID: -508557599
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DukunAtk (1)_8
-      rect:
-        serializedVersion: 2
-        x: 2070
-        y: 1482
-        width: 444
-        height: 733
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 51e5b686e7785e6439989759d0545367
-      internalID: 594013565
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DukunAtk (1)_9
-      rect:
-        serializedVersion: 2
-        x: 1843
-        y: 1915
-        width: 13
-        height: 13
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7c4cf064191988a4191c8d9af0aa6481
-      internalID: 2006639736
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DukunAtk (1)_10
-      rect:
-        serializedVersion: 2
-        x: 1843
-        y: 1881
-        width: 13
+        x: 1865
+        y: 2550
+        width: 14
         height: 14
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -334,20 +271,83 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2192189eb99357a48a08b05c6fb7f41a
-      internalID: -122470169
+      spriteID: 6464306b8df4358469745da70b190447
+      internalID: -1165172072
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DukunAtk (1)_11
+      name: DukunAtkCba_8
       rect:
         serializedVersion: 2
-        x: 109
-        y: 797
+        x: 2105
+        y: 2079
+        width: 547
+        height: 736
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fca8e7ac8e447d4291fe84e02b8a1d9
+      internalID: -1104520311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DukunAtkCba_9
+      rect:
+        serializedVersion: 2
+        x: 1865
+        y: 2506
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83ee521bc0461b84caad654ba1491d3f
+      internalID: 1991153490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DukunAtkCba_10
+      rect:
+        serializedVersion: 2
+        x: 1865
+        y: 2473
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b75871db8ab1de4dbed845684f46ef5
+      internalID: -484664494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DukunAtkCba_11
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 1384
         width: 478
-        height: 660
+        height: 664
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -355,20 +355,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2594fb23f487a4d498c09e878cd52461
-      internalID: -1975779392
+      spriteID: 87286657663bac5468a1caebdbf69178
+      internalID: -518553379
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DukunAtk (1)_12
+      name: DukunAtkCba_12
       rect:
         serializedVersion: 2
-        x: 750
-        y: 804
+        x: 771
+        y: 1386
         width: 478
-        height: 660
+        height: 664
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -376,20 +376,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6d871dcc11116fa4fb910de3cc5cf452
-      internalID: 1985660992
+      spriteID: cca8234243220ae43b0214784ef37e48
+      internalID: 1945661915
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DukunAtk (1)_13
+      name: DukunAtkCba_13
       rect:
         serializedVersion: 2
-        x: 1512
-        y: 797
+        x: 1534
+        y: 1375
         width: 478
-        height: 660
+        height: 664
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -397,39 +397,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 52e40218061b1504488f7da5209b8366
-      internalID: -1082836489
+      spriteID: 13fca1407cae9234b9acd90f946f3ee1
+      internalID: 1170910108
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DukunAtk (1)_14
+      name: DukunAtkCba_14
       rect:
         serializedVersion: 2
-        x: 80
-        y: 18
-        width: 419
-        height: 670
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3f248a26453a387489652007a170edc6
-      internalID: -868816599
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DukunAtk (1)_15
-      rect:
-        serializedVersion: 2
-        x: 661
-        y: 18
+        x: 11
+        y: 592
         width: 511
         height: 670
       alignment: 0
@@ -439,19 +418,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 45657c4fe40492a489b6f22f7d5ef913
-      internalID: -908297851
+      spriteID: cf0bcdd5cd8f7ed478f8ba58c76ceeb8
+      internalID: -1685908073
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DukunAtk (1)_16
+      name: DukunAtkCba_15
       rect:
         serializedVersion: 2
-        x: 1464
-        y: 11
-        width: 414
+        x: 683
+        y: 603
+        width: 511
         height: 670
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -460,19 +439,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8c1a6edac45247545867204f8c733660
-      internalID: -1997503467
+      spriteID: 8fda9e1c5682e57459315bf7de8a916d
+      internalID: -1049902415
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DukunAtk (1)_17
+      name: DukunAtkCba_16
       rect:
         serializedVersion: 2
-        x: 2104
-        y: 11
-        width: 414
+        x: 1391
+        y: 590
+        width: 511
         height: 670
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -481,20 +460,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 997d8493cefb6e64d9711220b95c43d6
-      internalID: -191826573
+      spriteID: c74ebe160908f9d4c934b01db5052185
+      internalID: 13234859
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DukunAtk (1)_18
+      name: DukunAtkCba_17
       rect:
         serializedVersion: 2
-        x: 2030
-        y: 797
+        x: 2031
+        y: 600
+        width: 511
+        height: 670
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18b69a20959f08a4db86745c62a3e475
+      internalID: 386099203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DukunAtkCba_18
+      rect:
+        serializedVersion: 2
+        x: 2152
+        y: 1381
         width: 478
-        height: 660
+        height: 664
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -502,8 +502,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e37e09e67d774a6429f9c6bb6782a994
-      internalID: 1480095381
+      spriteID: 7bde59f072bce474b9e53e286d8c4cc7
+      internalID: 1211358573
       vertices: []
       indices: 
       edges: []
@@ -519,25 +519,25 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      DukunAtk (1)_0: -552973480
-      DukunAtk (1)_1: -663898602
-      DukunAtk (1)_10: -122470169
-      DukunAtk (1)_11: -1975779392
-      DukunAtk (1)_12: 1985660992
-      DukunAtk (1)_13: -1082836489
-      DukunAtk (1)_14: -868816599
-      DukunAtk (1)_15: -908297851
-      DukunAtk (1)_16: -1997503467
-      DukunAtk (1)_17: -191826573
-      DukunAtk (1)_18: 1480095381
-      DukunAtk (1)_2: 476862386
-      DukunAtk (1)_3: -1957987869
-      DukunAtk (1)_4: 1328821369
-      DukunAtk (1)_5: -1744504250
-      DukunAtk (1)_6: -863056859
-      DukunAtk (1)_7: -508557599
-      DukunAtk (1)_8: 594013565
-      DukunAtk (1)_9: 2006639736
+      DukunAtkCba_0: -1664681679
+      DukunAtkCba_1: 1656238546
+      DukunAtkCba_10: -484664494
+      DukunAtkCba_11: -518553379
+      DukunAtkCba_12: 1945661915
+      DukunAtkCba_13: 1170910108
+      DukunAtkCba_14: -1685908073
+      DukunAtkCba_15: -1049902415
+      DukunAtkCba_16: 13234859
+      DukunAtkCba_17: 386099203
+      DukunAtkCba_18: 1211358573
+      DukunAtkCba_2: 1533328680
+      DukunAtkCba_3: -1008715644
+      DukunAtkCba_4: 385162906
+      DukunAtkCba_5: 476363278
+      DukunAtkCba_6: 783361142
+      DukunAtkCba_7: -1165172072
+      DukunAtkCba_8: -1104520311
+      DukunAtkCba_9: 1991153490
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
