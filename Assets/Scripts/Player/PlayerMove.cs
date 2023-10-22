@@ -20,7 +20,7 @@ public class PlayerMove : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         inputJalan();
 
@@ -33,16 +33,13 @@ public class PlayerMove : MonoBehaviour
         moveSpeed.x = Input.GetAxisRaw("Horizontal");
         moveSpeed.y = Input.GetAxisRaw("Vertical");
 
-        if (moveSpeed != Vector2.zero)
-        {
-            rb.MovePosition(rb.position + moveSpeed.normalized * speed * Time.fixedDeltaTime);
-        }
     }
 
     void animasi()
     {
         if(moveSpeed != Vector2.zero)
         {
+            move();
             animator.SetFloat("moveX", moveSpeed.x);
             animator.SetFloat("moveY", moveSpeed.y);
             animator.SetBool("moving", true);
@@ -50,6 +47,11 @@ public class PlayerMove : MonoBehaviour
         {
             animator.SetBool("moving", false);
         }
+    }
+
+    void move()
+    {
+        rb.MovePosition(rb.position + moveSpeed.normalized * speed * Time.fixedDeltaTime);
     }
 
 
