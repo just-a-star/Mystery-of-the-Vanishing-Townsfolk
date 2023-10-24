@@ -21,7 +21,9 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] public float dashCooldown;
     private bool isDashing = false;
     private float lastDashTime = 0;
- 
+    public LayerMask obstacleLayer;
+
+
     public PlayerState state;
     Animator animator;
     Rigidbody2D rb;
@@ -50,7 +52,7 @@ public class PlayerMove : MonoBehaviour
         else if (!isDashing)
         {
            
-            if (Input.GetButtonDown("dash") && Time.time - lastDashTime > dashCooldown)
+            if (Input.GetButtonDown("dash") && Time.time - lastDashTime > dashCooldown && state != PlayerState.dash)
             {
                 Debug.Log("Dash key pressed");
                 StartDash();
@@ -111,9 +113,26 @@ public class PlayerMove : MonoBehaviour
         isDashing = true;
         lastDashTime = Time.time;
         state = PlayerState.dash;
-        rb.velocity = moveSpeed.normalized * dashSpeed;
-        Debug.Log("Dash Velocity: " + rb.velocity);
-        StartCoroutine(EndDash());
+
+        Vector2 dashDirection = moveSpeed.normalized;
+        
+
+        // pke raycast untuk memeriksa ada collider gk di depan player
+        RaycastHit2D hit = Physics2D.Raycast(rb.position, dashDirection, dashSpeed, obstacleLayer);
+
+        if (hit.collider != null)
+        {
+            // Ada collider yang menghalangi, jadi kita tidak melakukan dash
+            isDashing = false;
+            state = PlayerState.walk;
+        }
+        else
+        {
+            // Tidak ada collider yang menghalangi, jadi kita melakukan dash
+            rb.velocity = dashDirection * dashSpeed;
+            Debug.Log("Dash Velocity: " + rb.velocity);
+            StartCoroutine(EndDash());
+        }
     }
 
     IEnumerator EndDash()
