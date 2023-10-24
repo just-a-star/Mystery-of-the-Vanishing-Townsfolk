@@ -6599,7 +6599,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 6
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -6643,7 +6643,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 842046198}
-  smoothing: 0.15
+  smoothing: 0.7
   maxPosition: {x: 5.05, y: 5.97}
   minPosition: {x: -4.14, y: -6.97}
 --- !u!1 &608274364
@@ -13203,7 +13203,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82b1fb83c9988744ea6642ee7e9bf232, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  state: 0
+  dashSpeed: 40
+  dashDuration: 0.1
+  dashCooldown: 0.5
+  state: 2
   speed: 10
 --- !u!61 &842046200
 BoxCollider2D:

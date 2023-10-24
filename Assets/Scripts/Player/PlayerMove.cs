@@ -9,12 +9,18 @@ public enum PlayerState
     stun,
     idle,
     walk,
-    attack
+    attack,
+    dash
 }
 
 public class PlayerMove : MonoBehaviour
 {
-
+    // dash
+    [SerializeField] public float dashSpeed;
+    [SerializeField] public float dashDuration;
+    [SerializeField] public float dashCooldown;
+    private bool isDashing = false;
+    private float lastDashTime = 0;
  
     public PlayerState state;
     Animator animator;
@@ -41,12 +47,21 @@ public class PlayerMove : MonoBehaviour
         {
             StartCoroutine(AttackCo());
         }
-        
-        else if (state == PlayerState.walk || state == PlayerState.idle)
+        else if (!isDashing)
         {
-            animasi();
-        }       
+           
+            if (Input.GetButtonDown("dash") && Time.time - lastDashTime > dashCooldown)
+            {
+                Debug.Log("Dash key pressed");
+                StartDash();
+            }
+            else
+            {
+                animasi();
+            }
+        }
     }
+
 
     IEnumerator AttackCo()
     {
@@ -88,6 +103,25 @@ public class PlayerMove : MonoBehaviour
     public void Knock(float knockTime)
     {
         StartCoroutine(KnockCo(knockTime));
+    }
+
+    // Dash abilty
+    void StartDash()
+    {
+        isDashing = true;
+        lastDashTime = Time.time;
+        state = PlayerState.dash;
+        rb.velocity = moveSpeed.normalized * dashSpeed;
+        Debug.Log("Dash Velocity: " + rb.velocity);
+        StartCoroutine(EndDash());
+    }
+
+    IEnumerator EndDash()
+    {
+        yield return new WaitForSeconds(dashDuration);
+        isDashing = false;
+        state = PlayerState.walk;
+        rb.velocity = Vector2.zero;
     }
 
     private IEnumerator KnockCo(float knockTime)
