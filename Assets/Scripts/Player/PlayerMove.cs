@@ -118,7 +118,7 @@ public class PlayerMove : MonoBehaviour
         
 
         // pke raycast untuk memeriksa ada collider gk di depan player
-        RaycastHit2D hit = Physics2D.Raycast(rb.position, dashDirection, dashSpeed, obstacleLayer);
+        RaycastHit2D hit = Physics2D.Raycast(rb.position, dashDirection, 0, obstacleLayer);
 
         if (hit.collider != null)
         {
