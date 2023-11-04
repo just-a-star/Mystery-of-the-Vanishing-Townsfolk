@@ -24,10 +24,11 @@ public class RoomMove : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if(collision.CompareTag("Player")) { 
         cam.minPosition += cameraChange;
         cam.maxPosition += cameraChange;
         collision.transform.position += playerChange;
-
+        }
         //blom nmbh teks
         /*if(needText)
         {

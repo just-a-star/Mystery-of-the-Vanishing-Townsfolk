@@ -102,10 +102,10 @@ public class PlayerMove : MonoBehaviour
         rb.MovePosition(rb.position + moveSpeed.normalized * speed * Time.fixedDeltaTime);
     }
 
-    public void Knock(float knockTime)
+    /*public void Knock(float knockTime)
     {
         StartCoroutine(KnockCo(knockTime));
-    }
+    }*/
 
     // Dash abilty
     void StartDash()
