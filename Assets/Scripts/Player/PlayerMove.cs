@@ -39,7 +39,15 @@ public class PlayerMove : MonoBehaviour
         animator = GetComponent<Animator>();
         animator.SetFloat("moveX", 0);
         animator.SetFloat("moveY", -1);
-        transform.position = starPos.initialValue;
+        if (starPos != null)
+        {
+            transform.position = starPos.initialValue;
+            
+        } else
+        {
+            Debug.Log("make sure to set the starting position");
+        }
+
     }
 
     // Update is called once per frame
