@@ -39,7 +39,7 @@ public class PlayerMove : MonoBehaviour
         animator = GetComponent<Animator>();
         animator.SetFloat("moveX", 0);
         animator.SetFloat("moveY", -1);
-        /*transform.position = starPos.initialValue;*/
+        transform.position = starPos.initialValue;
     }
 
     // Update is called once per frame
