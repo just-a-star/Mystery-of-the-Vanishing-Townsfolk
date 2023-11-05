@@ -29,6 +29,7 @@ public class PlayerMove : MonoBehaviour
     Rigidbody2D rb;
     public float speed;
     Vector2 moveSpeed;
+    public VectorValue starPos;
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +39,7 @@ public class PlayerMove : MonoBehaviour
         animator = GetComponent<Animator>();
         animator.SetFloat("moveX", 0);
         animator.SetFloat("moveY", -1);
+        /*transform.position = starPos.initialValue;*/
     }
 
     // Update is called once per frame
