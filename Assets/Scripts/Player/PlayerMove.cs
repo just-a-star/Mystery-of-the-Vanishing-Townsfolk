@@ -63,7 +63,8 @@ public class PlayerMove : MonoBehaviour
 
         if (canMove && Input.GetButtonDown("attack") && state != PlayerState.attack && state != PlayerState.stun)
         {
-            playerAttack.Attack();
+            StartCoroutine(AttackCo());
+            /*playerAttack.Attack();*/
         }
         else if (!isDashing)
         {
@@ -80,9 +81,19 @@ public class PlayerMove : MonoBehaviour
         }
     }
 
+    IEnumerator AttackCo()
+    {
+        animator.SetBool("attacking", true);
+        state = PlayerState.attack;
+        yield return null;
+        animator.SetBool("attacking", false);
+        yield return new WaitForSeconds(.3f);
+        state = PlayerState.walk;
+    }
 
-    
-    
+
+
+
 
     void inputJalan()
     {
@@ -111,7 +122,7 @@ public class PlayerMove : MonoBehaviour
         rb.MovePosition(rb.position + moveSpeed.normalized * speed * Time.fixedDeltaTime);
     }
 
-    /*public void Knock(float knockTime)
+   /* public void Knock(float knockTime)
     {
         StartCoroutine(KnockCo(knockTime));
     }*/
