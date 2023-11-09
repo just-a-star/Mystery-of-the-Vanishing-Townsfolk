@@ -109,7 +109,7 @@ public class PlayerMove : MonoBehaviour
 
     void move()
     {
-        rb.MovePosition(rb.position + moveSpeed.normalized * speed * Time.deltaTime);
+        rb.MovePosition(rb.position + moveSpeed.normalized * speed * Time.fixedDeltaTime);
     }
 
     /*public void Knock(float knockTime)
