@@ -22,18 +22,24 @@ public class PlayerMove : MonoBehaviour
     private bool isDashing = false;
     private float lastDashTime = 0;
     public LayerMask obstacleLayer;
-
-
+    
+    
+    // Components
     public PlayerState state;
     Animator animator;
     Rigidbody2D rb;
+    public PlayerAttack playerAttack;
+
+    // Movement
     public float speed;
     Vector2 moveSpeed;
     public VectorValue starPos;
+    private bool canMove = true;
 
     // Start is called before the first frame update
     void Start()
     {
+        playerAttack = GetComponent<PlayerAttack>();
         state = PlayerState.walk;
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
@@ -55,9 +61,9 @@ public class PlayerMove : MonoBehaviour
     {
         inputJalan();
 
-        if (Input.GetButtonDown("attack") && state != PlayerState.attack && state != PlayerState.stun)
+        if (canMove && Input.GetButtonDown("attack") && state != PlayerState.attack && state != PlayerState.stun)
         {
-            StartCoroutine(AttackCo());
+            playerAttack.Attack();
         }
         else if (!isDashing)
         {
@@ -75,15 +81,8 @@ public class PlayerMove : MonoBehaviour
     }
 
 
-    IEnumerator AttackCo()
-    {
-        animator.SetBool("attacking", true);
-        state = PlayerState.attack;
-        yield return null;
-        animator.SetBool("attacking", false);
-        yield return new WaitForSeconds(.3f);
-        state = PlayerState.walk;
-    }
+    
+    
 
     void inputJalan()
     {
@@ -145,6 +144,17 @@ public class PlayerMove : MonoBehaviour
         }
     }
 
+    public void DisableMovement()
+    {
+        rb.isKinematic = true;
+        canMove = false;
+    }
+
+    public void EnableMovement()
+    {
+        rb.isKinematic = false;
+        canMove = true;
+    }
     IEnumerator EndDash()
     {
         yield return new WaitForSeconds(dashDuration);

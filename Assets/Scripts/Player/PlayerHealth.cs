@@ -8,16 +8,21 @@ public class HealthManager : MonoBehaviour
     public int pHealth;
     public GameObject[] healthUI;
     // Start is called before the first frame update
-    
+
     void TakeDamage()
     {
         pHealth--;
-        if(pHealth <= 0 )
+        if (pHealth < 0)
         {
             pHealth = 0;
         }
-        healthUI[pHealth].SetActive( false );
+        else
+        {
+            // Subtract 1 because arrays are 0-indexed and pHealth starts from 1
+            healthUI[pHealth].SetActive(false);
+        }
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("enemy"))

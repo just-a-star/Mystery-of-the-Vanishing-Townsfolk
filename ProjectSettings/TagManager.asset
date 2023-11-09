@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - enemy
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -48,7 +49,7 @@ TagManager:
   - name: Bangunan
     uniqueID: 1707716619
     locked: 0
-  - name: enemy
+  - name: Enemy
     uniqueID: 597007697
     locked: 0
   - name: Player
