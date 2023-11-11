@@ -452,11 +452,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1205066827062364118, guid: 70c085452208b5146bfb5daa80b90554, type: 3}
   m_PrefabInstance: {fileID: 78293779}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &160480916 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1438543189208245228, guid: 9c530e180a7ad8a4c83fef959b6ffdf2, type: 3}
-  m_PrefabInstance: {fileID: 1473690898}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &168746121
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1555,7 +1550,9 @@ GameObject:
   - component: {fileID: 1228507566}
   - component: {fileID: 1228507565}
   - component: {fileID: 1228507564}
-  - component: {fileID: 1228507563}
+  - component: {fileID: 1228507569}
+  - component: {fileID: 1228507568}
+  - component: {fileID: 1228507570}
   m_Layer: 0
   m_Name: log_0 (1)
   m_TagString: Enemy
@@ -1563,23 +1560,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1228507563
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1228507562}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5065bf892bdae4742a01bbe8dc17855f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentState: 0
-  health: 5
-  enemyName: 
-  baseAttack: 0
-  moveSpeed: 0
 --- !u!61 &1228507564
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1612,7 +1592,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.025318146, y: -0.11089897}
+  m_Offset: {x: 0.014148891, y: -0.08483744}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1623,7 +1603,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.1691284, y: 1.3493443}
+  m_Size: {x: 1.2361437, y: 1.4014673}
   m_EdgeRadius: 0
 --- !u!50 &1228507565
 Rigidbody2D:
@@ -1633,7 +1613,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1228507562}
-  m_BodyType: 2
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -1649,7 +1629,7 @@ Rigidbody2D:
     serializedVersion: 2
     m_Bits: 0
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 4
 --- !u!212 &1228507566
@@ -1719,6 +1699,87 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1228507568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1228507562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 366def6c98f59f041b3e15f7b7b66f77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentState: 0
+  health: 5
+  enemyName: Kayu Cuy
+  baseAttack: 1
+  moveSpeed: 1.5
+  target: {fileID: 0}
+  chaseRadius: 4
+  attackRadius: 1.2
+  homePosition: {fileID: 0}
+--- !u!61 &1228507569
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1228507562}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.5882449}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2, y: 2}
+    newSize: {x: 2, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.64480305, y: 0.31717396}
+  m_EdgeRadius: 0
+--- !u!114 &1228507570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1228507562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79a7cdda8d0c0e547a350255d3bf3d09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dorongan: 4
+  knockTime: 0.2
+  damage: 1
 --- !u!1001 &1278354429
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1969,57 +2030,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6572764580704817507, guid: 9c530e180a7ad8a4c83fef959b6ffdf2, type: 3}
-      propertyPath: speed
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 6572764580704817507, guid: 9c530e180a7ad8a4c83fef959b6ffdf2, type: 3}
-      propertyPath: state
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6572764580704817507, guid: 9c530e180a7ad8a4c83fef959b6ffdf2, type: 3}
-      propertyPath: starPos
-      value: 
-      objectReference: {fileID: 11400000, guid: 923531c2048ff5844833c97575b56416, type: 2}
-    - target: {fileID: 6572764580704817507, guid: 9c530e180a7ad8a4c83fef959b6ffdf2, type: 3}
-      propertyPath: playerAttack
-      value: 
-      objectReference: {fileID: 1473690907}
-    - target: {fileID: 8848348241098912953, guid: 9c530e180a7ad8a4c83fef959b6ffdf2, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8848348241098912953, guid: 9c530e180a7ad8a4c83fef959b6ffdf2, type: 3}
-      propertyPath: swordDamage
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1438543189208245228, guid: 9c530e180a7ad8a4c83fef959b6ffdf2, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1473690907}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c530e180a7ad8a4c83fef959b6ffdf2, type: 3}
 --- !u!4 &1473690899 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6176531429503655821, guid: 9c530e180a7ad8a4c83fef959b6ffdf2, type: 3}
   m_PrefabInstance: {fileID: 1473690898}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1473690907
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 160480916}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: edfb79400308a32478be225786032744, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  swordCollider: {fileID: 1646356698}
-  swordDamage: 5
 --- !u!1 &1594535189
 GameObject:
   m_ObjectHideFlags: 0
@@ -2227,11 +2247,6 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!61 &1646356698 stripped
-BoxCollider2D:
-  m_CorrespondingSourceObject: {fileID: 7644090448584646103, guid: 9c530e180a7ad8a4c83fef959b6ffdf2, type: 3}
-  m_PrefabInstance: {fileID: 1473690898}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1821862866
 GameObject:
   m_ObjectHideFlags: 0
@@ -2304,7 +2319,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1821862866}
-  m_BodyType: 2
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -2320,7 +2335,7 @@ Rigidbody2D:
     serializedVersion: 2
     m_Bits: 0
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 4
 --- !u!212 &1821862869
@@ -16299,7 +16314,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b219ba7a9c0e0b48999ffd63bacad9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentState: 0
   health: 3
+  enemyName: 
+  baseAttack: 0
+  moveSpeed: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

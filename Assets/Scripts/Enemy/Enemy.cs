@@ -2,11 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum EnemyState
+{
+    idle,
+    walk,
+    attack,
+    stagger
+}
+
 public class Enemy : MonoBehaviour
 {
-    Animator animator;
+    public EnemyState currentState;
+    public float health;
+    public string enemyName;
+    public int baseAttack;
+    public float moveSpeed;
 
-    [SerializeField] private float health; // Make this private to encapsulate it
     public float Health
     {
         set
@@ -20,13 +31,10 @@ public class Enemy : MonoBehaviour
         get { return health; }
     }
 
-    private void Start()
-    {
-        animator = GetComponent<Animator>();
-    }
+ 
 
     // Call this function to apply damage to the enemy
-    public void TakeDamage(float damage)
+    void TakeDamage(float damage)
     {
         health -= damage;
         if (health <= 0)
@@ -61,5 +69,22 @@ public class Enemy : MonoBehaviour
     {
         // Destroy the enemy GameObject
         Destroy(gameObject);
+    }
+
+    public void Knock(Rigidbody2D rb, float knockTime, int damage)
+    {
+        StartCoroutine(KnockCo(rb, knockTime));
+        TakeDamage(damage);
+    }
+
+    private IEnumerator KnockCo(Rigidbody2D rb, float knockTime)
+    {
+        if (rb != null)
+        {
+            yield return new WaitForSeconds(knockTime);
+            rb.velocity = Vector2.zero;
+            currentState = EnemyState.idle;
+            rb.velocity = Vector2.zero;
+        }
     }
 }

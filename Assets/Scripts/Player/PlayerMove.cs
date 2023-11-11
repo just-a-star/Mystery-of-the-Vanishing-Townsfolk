@@ -15,6 +15,11 @@ public enum PlayerState
 
 public class PlayerMove : MonoBehaviour
 {
+
+    //darah
+    public int darah;
+    
+
     // dash
     [SerializeField] public float dashSpeed;
     [SerializeField] public float dashDuration;
@@ -28,18 +33,21 @@ public class PlayerMove : MonoBehaviour
     public PlayerState state;
     Animator animator;
     Rigidbody2D rb;
-    public PlayerAttack playerAttack;
+    /*public PlayerAttack playerAttack;*/
 
     // Movement
     public float speed;
     Vector2 moveSpeed;
     public VectorValue starPos;
     private bool canMove = true;
+    
 
     // Start is called before the first frame update
     void Start()
     {
-        playerAttack = GetComponent<PlayerAttack>();
+        //darah
+        PlayerHealth.setDarah(darah);
+        /*playerAttack = GetComponent<PlayerAttack>();*/
         state = PlayerState.walk;
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
@@ -59,6 +67,7 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(PlayerHealth.GetPlayerHealth());
         inputJalan();
 
         if (canMove && Input.GetButtonDown("attack") && state != PlayerState.attack && state != PlayerState.stun)
@@ -74,7 +83,7 @@ public class PlayerMove : MonoBehaviour
                 Debug.Log("Dash key pressed");
                 StartDash();
             }
-            else
+            else if(state == PlayerState.walk || state == PlayerState.idle)
             {
                 animasi();
             }
@@ -172,6 +181,19 @@ public class PlayerMove : MonoBehaviour
         isDashing = false;
         state = PlayerState.walk;
         rb.velocity = Vector2.zero;
+    }
+
+    public void Knock(float knockTime, int damage)
+    {
+        darah = darah - damage;
+        PlayerHealth.setDarah(darah);
+        if (darah > 0 )
+        {
+            StartCoroutine(KnockCo(knockTime));
+        } else
+        {
+            this.gameObject.SetActive(false);
+        }
     }
 
     private IEnumerator KnockCo(float knockTime)

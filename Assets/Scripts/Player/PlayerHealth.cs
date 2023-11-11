@@ -3,31 +3,32 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HealthManager : MonoBehaviour
+public class PlayerHealth : MonoBehaviour
 {
-    public int pHealth;
+    public static int pHealth;
     public GameObject[] healthUI;
     // Start is called before the first frame update
 
-    void TakeDamage()
+    public void TakeDamage()
     {
-        pHealth--;
-        if (pHealth < 0)
-        {
-            pHealth = 0;
-        }
-        else
-        {
-            // Subtract 1 because arrays are 0-indexed and pHealth starts from 1
+        Debug.Log("ini adalah pHealth awal : " + pHealth);
+            
+        
+            pHealth --;
             healthUI[pHealth].SetActive(false);
-        }
+        
+        
+        Debug.Log("ini adalah pHealth akhir : " + pHealth);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+
+    public static  void setDarah(int darah)
     {
-        if (collision.CompareTag("enemy"))
-        {
-            TakeDamage();
-        }
+        pHealth = darah;
+    }
+
+    public static int GetPlayerHealth()
+    {
+        return pHealth;
     }
 }
