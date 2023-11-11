@@ -30,7 +30,7 @@ public class Hit : MonoBehaviour
 
                 if(collision.gameObject.CompareTag("Player") && collision.isTrigger)
                 {
-                        collision.GetComponent<PlayerHealth>().TakeDamage();
+                    PlayerHealth.singleton.TakeDamage();
                     
                     if(collision.GetComponent<PlayerMove>().state != PlayerState.stun)
                     {

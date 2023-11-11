@@ -7,7 +7,9 @@ public class PlayerHealth : MonoBehaviour
 {
     public static PlayerHealth singleton;
     public int pHealth;
-    public GameObject[] healthUI;
+    public Image[] healthUI;
+    public Sprite full;
+    public Sprite empty;
 
     private void Awake()
     {
@@ -15,14 +17,14 @@ public class PlayerHealth : MonoBehaviour
     }
     public void TakeDamage()
     {
-            healthUI[pHealth-1].SetActive(false);
+            healthUI[pHealth-1].sprite = empty;
     }
 
     public void GainHeart()
     {
         if(pHealth <= healthUI.Length)
         {
-            healthUI[pHealth-1].SetActive(true);
+            healthUI[pHealth-1].sprite = full;
         }
     }
 

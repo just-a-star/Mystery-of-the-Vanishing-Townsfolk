@@ -1649,7 +1649,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.014148891, y: -0.08483744}
+  m_Offset: {x: 0.014148891, y: -0.11462164}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1660,7 +1660,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.2361437, y: 1.4014673}
+  m_Size: {x: 1.2361437, y: 1.4610357}
   m_EdgeRadius: 0
 --- !u!50 &1228507565
 Rigidbody2D:
@@ -2028,29 +2028,41 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 4079164395589931651, guid: 9c530e180a7ad8a4c83fef959b6ffdf2, type: 3}
+      propertyPath: full
+      value: 
+      objectReference: {fileID: -1431114619, guid: ae00fdd263f0ed647902f44221a02040, type: 3}
+    - target: {fileID: 4079164395589931651, guid: 9c530e180a7ad8a4c83fef959b6ffdf2, type: 3}
+      propertyPath: empty
+      value: 
+      objectReference: {fileID: -95179546, guid: ae00fdd263f0ed647902f44221a02040, type: 3}
+    - target: {fileID: 4079164395589931651, guid: 9c530e180a7ad8a4c83fef959b6ffdf2, type: 3}
       propertyPath: pHealth
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4079164395589931651, guid: 9c530e180a7ad8a4c83fef959b6ffdf2, type: 3}
+      propertyPath: healthUI.Array.size
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4079164395589931651, guid: 9c530e180a7ad8a4c83fef959b6ffdf2, type: 3}
       propertyPath: healthUI.Array.data[0]
       value: 
-      objectReference: {fileID: 337085690}
+      objectReference: {fileID: 337085692}
     - target: {fileID: 4079164395589931651, guid: 9c530e180a7ad8a4c83fef959b6ffdf2, type: 3}
       propertyPath: healthUI.Array.data[1]
       value: 
-      objectReference: {fileID: 232369062}
+      objectReference: {fileID: 232369064}
     - target: {fileID: 4079164395589931651, guid: 9c530e180a7ad8a4c83fef959b6ffdf2, type: 3}
       propertyPath: healthUI.Array.data[2]
       value: 
-      objectReference: {fileID: 932937385}
+      objectReference: {fileID: 932937387}
     - target: {fileID: 4079164395589931651, guid: 9c530e180a7ad8a4c83fef959b6ffdf2, type: 3}
       propertyPath: healthUI.Array.data[3]
       value: 
-      objectReference: {fileID: 1469443519}
+      objectReference: {fileID: 1469443521}
     - target: {fileID: 4079164395589931651, guid: 9c530e180a7ad8a4c83fef959b6ffdf2, type: 3}
       propertyPath: healthUI.Array.data[4]
       value: 
-      objectReference: {fileID: 182846407}
+      objectReference: {fileID: 182846408}
     - target: {fileID: 6176531429503655821, guid: 9c530e180a7ad8a4c83fef959b6ffdf2, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.26
