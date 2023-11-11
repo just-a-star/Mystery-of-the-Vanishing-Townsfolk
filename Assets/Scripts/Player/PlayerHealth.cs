@@ -5,29 +5,34 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public static int pHealth;
+    public static PlayerHealth singleton;
+    public int pHealth;
     public GameObject[] healthUI;
-    // Start is called before the first frame update
 
+    private void Awake()
+    {
+        singleton = this;
+    }
     public void TakeDamage()
     {
-        Debug.Log("ini adalah pHealth awal : " + pHealth);
-            
-        
-            pHealth --;
-            healthUI[pHealth].SetActive(false);
-        
-        
-        Debug.Log("ini adalah pHealth akhir : " + pHealth);
+            healthUI[pHealth-1].SetActive(false);
+    }
+
+    public void GainHeart()
+    {
+        if(pHealth <= healthUI.Length)
+        {
+            healthUI[pHealth-1].SetActive(true);
+        }
     }
 
 
-    public static  void setDarah(int darah)
+    public  void setDarah(int darah)
     {
         pHealth = darah;
     }
 
-    public static int GetPlayerHealth()
+    public int GetPlayerHealth()
     {
         return pHealth;
     }

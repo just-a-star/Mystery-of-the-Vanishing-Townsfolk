@@ -40,13 +40,13 @@ public class PlayerMove : MonoBehaviour
     Vector2 moveSpeed;
     public VectorValue starPos;
     private bool canMove = true;
-    
 
     // Start is called before the first frame update
     void Start()
     {
         //darah
-        PlayerHealth.setDarah(darah);
+        
+        
         /*playerAttack = GetComponent<PlayerAttack>();*/
         state = PlayerState.walk;
         rb = GetComponent<Rigidbody2D>();
@@ -67,7 +67,8 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(PlayerHealth.GetPlayerHealth());
+        darah = PlayerHealth.singleton.pHealth;
+        
         inputJalan();
 
         if (canMove && Input.GetButtonDown("attack") && state != PlayerState.attack && state != PlayerState.stun)
@@ -186,9 +187,10 @@ public class PlayerMove : MonoBehaviour
     public void Knock(float knockTime, int damage)
     {
         darah = darah - damage;
-        PlayerHealth.setDarah(darah);
+        PlayerHealth.singleton.setDarah(darah);
         if (darah > 0 )
         {
+            
             StartCoroutine(KnockCo(knockTime));
         } else
         {
