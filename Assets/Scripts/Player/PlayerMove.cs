@@ -10,12 +10,13 @@ public enum PlayerState
     idle,
     walk,
     attack,
-    dash
+    dash,
+    interact
 }
 
 public class PlayerMove : MonoBehaviour
 {
-
+    public static PlayerMove singleton;
     //darah
     public int darah;
     
@@ -31,15 +32,22 @@ public class PlayerMove : MonoBehaviour
     
     // Components
     public PlayerState state;
-    Animator animator;
+    public Animator animator;
     Rigidbody2D rb;
-    /*public PlayerAttack playerAttack;*/
+
+    // received item
+    public SpriteRenderer receivedItem;
+    public Inventory playerInventory;
 
     // Movement
     public float speed;
     Vector2 moveSpeed;
     public VectorValue starPos;
-    private bool canMove = true;
+
+    private void Awake()
+    {
+        singleton = this;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -71,7 +79,7 @@ public class PlayerMove : MonoBehaviour
         
         inputJalan();
 
-        if (canMove && Input.GetButtonDown("attack") && state != PlayerState.attack && state != PlayerState.stun)
+        if (Input.GetButtonDown("attack") && state != PlayerState.attack && state != PlayerState.stun && state != PlayerState.interact)
         {
             StartCoroutine(AttackCo());
             /*playerAttack.Attack();*/
@@ -165,17 +173,6 @@ public class PlayerMove : MonoBehaviour
         }
     }
 
-    public void DisableMovement()
-    {
-        rb.isKinematic = true;
-        canMove = false;
-    }
-
-    public void EnableMovement()
-    {
-        rb.isKinematic = false;
-        canMove = true;
-    }
     IEnumerator EndDash()
     {
         yield return new WaitForSeconds(dashDuration);
@@ -206,6 +203,25 @@ public class PlayerMove : MonoBehaviour
             rb.velocity = Vector2.zero;
             state = PlayerState.idle;
             rb.velocity = Vector2.zero;
+        }
+    }
+
+    public void RaiseItem()
+    {
+        if(playerInventory.currentItem != null)
+        {
+
+            if(state != PlayerState.interact)
+            {
+                animator.SetBool("receive items", true);
+                state = PlayerState.interact;
+                receivedItem.sprite = playerInventory.currentItem.itemSprite;
+            } else
+            {
+                animator.SetBool("receive items", false);
+                state = PlayerState.idle;
+                receivedItem.sprite = null;
+            }
         }
     }
 
