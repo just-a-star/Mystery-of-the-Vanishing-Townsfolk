@@ -17,6 +17,7 @@ public class Enemy : MonoBehaviour
     public string enemyName;
     public int baseAttack;
     public float moveSpeed;
+    public GameObject deathEffect;
 
     public float Health
     {
@@ -48,8 +49,17 @@ public class Enemy : MonoBehaviour
         // Code to handle the enemy's death, such as playing an animation or directly destroying the GameObject
 
         // Handle the enemy's death
-        Debug.Log(name + " is dead.");
+        DeathEffect();
         Destroy(gameObject);
+    }
+
+    void DeathEffect()
+    {
+        if(deathEffect != null)
+        {
+            GameObject effect = Instantiate(deathEffect, transform.position, Quaternion.identity);
+            Destroy(effect, 1f);
+        }
     }
 
 
