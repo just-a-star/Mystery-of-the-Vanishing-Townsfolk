@@ -8,7 +8,7 @@ public class Heart : MonoBehaviour
 
     public static Heart singleton;
 
-    public int heart;
+    public IntValue heart;
 
 
     private void Awake()
@@ -17,22 +17,16 @@ public class Heart : MonoBehaviour
     }
 
 
-    private void Update()
-    {
-        heart = PlayerHealth.singleton.GetPlayerHealth();
-
-    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         
         if(collision.CompareTag("Player") && collision.isTrigger)
         {
-            if (heart < 5)
+            if (heart.initialValue < 5)
             {
-                heart++;
+                heart.initialValue++;
 
                 
-                PlayerHealth.singleton.setDarah(heart);
                 PlayerHealth.singleton.GainHeart();
 
                 Destroy(this.gameObject);

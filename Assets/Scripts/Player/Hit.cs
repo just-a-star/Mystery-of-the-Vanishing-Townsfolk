@@ -5,9 +5,16 @@ using UnityEngine;
 public class Hit : MonoBehaviour
 {
 
+    public static Hit Instance;
+
     public float dorongan;
     public float knockTime;
     public int damage;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

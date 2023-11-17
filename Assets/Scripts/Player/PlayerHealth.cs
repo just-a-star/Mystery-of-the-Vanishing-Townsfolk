@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PlayerHealth : MonoBehaviour
 {
     public static PlayerHealth singleton;
-    public int pHealth;
+    public IntValue pHealth;
     public Image[] healthUI;
     public Sprite full;
     public Sprite empty;
@@ -15,27 +15,55 @@ public class PlayerHealth : MonoBehaviour
     {
         singleton = this;
     }
-    public void TakeDamage()
-    {
-            healthUI[pHealth-1].sprite = empty;
-    }
 
-    public void GainHeart()
+    private void Start()
     {
-        if(pHealth <= healthUI.Length)
+        if (GambarDarah.instance != null)
         {
-            healthUI[pHealth-1].sprite = full;
+            // Mengatur nilai darah saat memulai scene
+            GambarDarah.instance.SetPlayerHealth(pHealth.initialValue);
+            UpdateHealthUI();
+        }
+        else
+        {
+            Debug.LogError("GameManager instance not found. Make sure GameManager object is present in the scene.");
         }
     }
 
 
-    public  void setDarah(int darah)
+    public void TakeDamage()
     {
-        pHealth = darah;
+        if(Hit.Instance.damage == 1)
+        {
+            GambarDarah.instance.SetPlayerHealth(GambarDarah.instance.GetPlayerHealth() - 1);
+            UpdateHealthUI();
+        }
+            
     }
 
-    public int GetPlayerHealth()
+    public void GainHeart()
     {
-        return pHealth;
+        if(pHealth.initialValue <= healthUI.Length)
+        {
+            GambarDarah.instance.SetPlayerHealth(GambarDarah.instance.GetPlayerHealth() + 1);
+            UpdateHealthUI();
+        }
+    }
+
+    private void UpdateHealthUI()
+    {
+        int currentHealth = GambarDarah.instance.GetPlayerHealth();
+
+        for (int i = 0; i < healthUI.Length; i++)
+        {
+            if (i < currentHealth)
+            {
+                healthUI[i].sprite = GambarDarah.instance.fullHeartSprite;
+            }
+            else
+            {
+                healthUI[i].sprite = GambarDarah.instance.emptyHeartSprite;
+            }
+        }
     }
 }

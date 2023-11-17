@@ -18,7 +18,7 @@ public class PlayerMove : MonoBehaviour
 {
     public static PlayerMove singleton;
     //darah
-    public int darah;
+    public IntValue darah;
     
 
     // dash
@@ -27,6 +27,7 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] public float dashCooldown;
     private bool isDashing = false;
     private float lastDashTime = 0;
+    [SerializeField] float dashDistance;
     public LayerMask obstacleLayer;
     
     
@@ -75,7 +76,6 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        darah = PlayerHealth.singleton.pHealth;
         
         inputJalan();
 
@@ -152,11 +152,17 @@ public class PlayerMove : MonoBehaviour
         lastDashTime = Time.time;
         state = PlayerState.dash;
 
+        int playerLayer = LayerMask.NameToLayer("Player");
+        int enemyLayer = LayerMask.NameToLayer("Musuh");
+
+        Physics2D.IgnoreLayerCollision(playerLayer, enemyLayer, true);
+
         Vector2 dashDirection = moveSpeed.normalized;
+        float finalDashSpeed = dashSpeed * dashDistance;
         
 
         // pke raycast untuk memeriksa ada collider gk di depan player
-        RaycastHit2D hit = Physics2D.Raycast(rb.position, dashDirection, 0, obstacleLayer);
+        RaycastHit2D hit = Physics2D.Raycast(rb.position, dashDirection, finalDashSpeed * Time.fixedDeltaTime, obstacleLayer);
 
         if (hit.collider != null)
         {
@@ -169,13 +175,16 @@ public class PlayerMove : MonoBehaviour
             // Tidak ada collider yang menghalangi, jadi kita melakukan dash
             rb.velocity = dashDirection * dashSpeed;
             Debug.Log("Dash Velocity: " + rb.velocity);
-            StartCoroutine(EndDash());
+            StartCoroutine(EndDash(playerLayer, enemyLayer));
         }
     }
 
-    IEnumerator EndDash()
+    IEnumerator EndDash(int playerLayer, int enemyLayer)
     {
         yield return new WaitForSeconds(dashDuration);
+
+        Physics2D.IgnoreLayerCollision(playerLayer, enemyLayer, false);
+
         isDashing = false;
         state = PlayerState.walk;
         rb.velocity = Vector2.zero;
@@ -183,9 +192,9 @@ public class PlayerMove : MonoBehaviour
 
     public void Knock(float knockTime, int damage)
     {
-        darah = darah - damage;
-        PlayerHealth.singleton.setDarah(darah);
-        if (darah > 0 )
+        darah.initialValue = darah.initialValue - damage;
+        
+        if (darah.initialValue > 0 )
         {
             
             StartCoroutine(KnockCo(knockTime));
