@@ -25,7 +25,7 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] public float dashSpeed;
     [SerializeField] public float dashDuration;
     [SerializeField] public float dashCooldown;
-    public bool isDashing = false;
+    private bool isDashing = false;
     private float lastDashTime = 0;
     [SerializeField] float dashDistance;
     public LayerMask obstacleLayer;
@@ -148,7 +148,6 @@ public class PlayerMove : MonoBehaviour
     // Dash abilty
     void StartDash()
     {
-
         isDashing = true;
         lastDashTime = Time.time;
         state = PlayerState.dash;
@@ -159,10 +158,11 @@ public class PlayerMove : MonoBehaviour
         Physics2D.IgnoreLayerCollision(playerLayer, enemyLayer, true);
 
         Vector2 dashDirection = moveSpeed.normalized;
+        float finalDashSpeed = dashSpeed * dashDistance;
         
 
         // pke raycast untuk memeriksa ada collider gk di depan player
-        RaycastHit2D hit = Physics2D.Raycast(rb.position, dashDirection, dashDistance, obstacleLayer);
+        RaycastHit2D hit = Physics2D.Raycast(rb.position, dashDirection, finalDashSpeed * Time.fixedDeltaTime, obstacleLayer);
 
         if (hit.collider != null)
         {

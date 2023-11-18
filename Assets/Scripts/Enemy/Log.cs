@@ -10,15 +10,10 @@ public class Log : Enemy
     public float chaseRadius;
     public float attackRadius;
     public Transform homePosition;
-    public CapsuleCollider2D notTrigger;
-
-
- 
 
     // Start is called before the first frame update
     void Start()
     {
-        notTrigger = GetComponent<CapsuleCollider2D>();
         currentState = EnemyState.idle;
         myRigidbody = GetComponent<Rigidbody2D>();
         target = GameObject.FindWithTag("Player").transform;
@@ -50,17 +45,5 @@ public class Log : Enemy
         }
 
 
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Bangunan"))
-        {
-            notTrigger.enabled = true;
-        }
-        else
-        {
-            notTrigger.enabled = false;
-        }
     }
 }

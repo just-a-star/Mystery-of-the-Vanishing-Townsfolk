@@ -5,7 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
-  - Bangunan
+  - enemy
   layers:
   - Default
   - TransparentFX
