@@ -87,7 +87,7 @@ public class PlayerMove : MonoBehaviour
         else if (!isDashing)
         {
            
-            if (Input.GetButtonDown("dash") && Time.time - lastDashTime > dashCooldown && state != PlayerState.dash)
+            if (Input.GetButtonDown("dash") && Time.time - lastDashTime > dashCooldown && state != PlayerState.dash && state != PlayerState.interact)
             {
                 Debug.Log("Dash key pressed");
                 StartDash();

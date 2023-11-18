@@ -10,6 +10,7 @@ public class TreasureChest : Interactable
     public Item contents;
     public Inventory playerInventory;
     public bool isOpen;
+    public BoolValue Kebuka;
     public GameObject dialogBox;
     public Text dialogText;
     Animator anim;
@@ -18,6 +19,12 @@ public class TreasureChest : Interactable
     void Start()
     {
         anim = GetComponent<Animator>();
+        isOpen = Kebuka.defaultValue;
+
+        if(isOpen)
+        {
+            anim.SetBool("opened", true);
+        }
     }
 
     // Update is called once per frame
@@ -55,6 +62,7 @@ public class TreasureChest : Interactable
         isOpen = true;
         
         anim.SetBool("opened", true);
+        Kebuka.defaultValue = isOpen;
     }
 
     public void ChestOpened()
