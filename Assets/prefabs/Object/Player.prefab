@@ -268,7 +268,8 @@ MonoBehaviour:
   dashSpeed: 50
   dashDuration: 0.1
   dashCooldown: 0.5
-  dashDistance: 1
+  isDashing: 0
+  dashDistance: 6
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 8

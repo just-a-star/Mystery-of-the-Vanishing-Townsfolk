@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 7870973871362284814}
   - component: {fileID: 6423186434704767662}
   - component: {fileID: 5848984466390496548}
-  - component: {fileID: 4894533573774379139}
   - component: {fileID: 5876177115573158516}
   - component: {fileID: 3408764766616000388}
-  m_Layer: 0
+  - component: {fileID: 7988738969011345814}
+  m_Layer: 6
   m_Name: log_0 (1)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -105,7 +105,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: c58a8e31d58447346853a7a44d0a4045, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -161,14 +161,52 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.2361437, y: 1.4610357}
   m_EdgeRadius: 0
---- !u!61 &4894533573774379139
-BoxCollider2D:
+--- !u!114 &5876177115573158516
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2799796973327466350}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 366def6c98f59f041b3e15f7b7b66f77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentState: 0
+  health: 5
+  enemyName: Kayu Cuy
+  baseAttack: 1
+  moveSpeed: 2
+  deathEffect: {fileID: 672477544100416043, guid: 85ae25cd0d29bba4288722d7a84db462, type: 3}
+  target: {fileID: 0}
+  chaseRadius: 4
+  attackRadius: 1.2
+  homePosition: {fileID: 0}
+  notTrigger: {fileID: 7988738969011345814}
+--- !u!114 &3408764766616000388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2799796973327466350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79a7cdda8d0c0e547a350255d3bf3d09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dorongan: 4
+  knockTime: 0.2
+  damage: 1
+--- !u!70 &7988738969011345814
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2799796973327466350}
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -193,52 +231,6 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.5882449}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 2}
-    newSize: {x: 2, y: 2}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.64480305, y: 0.31717396}
-  m_EdgeRadius: 0
---- !u!114 &5876177115573158516
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2799796973327466350}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 366def6c98f59f041b3e15f7b7b66f77, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentState: 0
-  health: 5
-  enemyName: Kayu Cuy
-  baseAttack: 1
-  moveSpeed: 1.5
-  target: {fileID: 0}
-  chaseRadius: 4
-  attackRadius: 1.2
-  homePosition: {fileID: 0}
---- !u!114 &3408764766616000388
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2799796973327466350}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79a7cdda8d0c0e547a350255d3bf3d09, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dorongan: 4
-  knockTime: 0.2
-  damage: 1
+  m_Offset: {x: 0, y: -0.43107128}
+  m_Size: {x: 0.8330612, y: 0.8330612}
+  m_Direction: 0

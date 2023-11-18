@@ -3,13 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MskRumah : MonoBehaviour
+public class PindahScene : MonoBehaviour
 {
-
+    [Header("scene yg mau diload")]
     public string sceneToLoad;
+
+    [Header("Posisi player")]
     public bool playerInRange;
     public Vector2 playerPosition;
     public VectorValue playerStorage;
+
+    [Header("posisi kamera")]
+    public Vector2 cameraNewMax;
+    public Vector2 cameraNewMin;
+    public VectorValue cameraMax;
+    public VectorValue cameraMin;
+
+    [Header("Transisi")]
     FadeInOut fade;
 
     void Start()
@@ -23,6 +33,7 @@ public class MskRumah : MonoBehaviour
     {
         fade.FadeIn();
         yield return new WaitForSeconds(1);
+        ResetCamera();
         SceneManager.LoadScene(sceneToLoad);
     }
 
@@ -50,5 +61,11 @@ public class MskRumah : MonoBehaviour
         {
             playerInRange = false;
         }
+    }
+
+    public void ResetCamera()
+    {
+        cameraMax.initialValue = cameraNewMax;
+        cameraMin.initialValue = cameraNewMin;
     }
 }

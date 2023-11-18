@@ -18,7 +18,6 @@ public class Enemy : MonoBehaviour
     public int baseAttack;
     public float moveSpeed;
     public GameObject deathEffect;
-
     public float Health
     {
         set
