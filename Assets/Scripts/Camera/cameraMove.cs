@@ -9,6 +9,14 @@ public class cameraMove : MonoBehaviour
     public Vector2 maxPosition;
     public Vector2 minPosition;
 
+    public VectorValue camMin;
+    public VectorValue camMax;
+
+    void Start()
+    {
+        maxPosition = camMax.initialValue;
+        minPosition = camMin.initialValue;
+    }
     void LateUpdate()
     {
         if (transform.position != target.position)

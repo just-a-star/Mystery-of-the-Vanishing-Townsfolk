@@ -158,11 +158,10 @@ public class PlayerMove : MonoBehaviour
         Physics2D.IgnoreLayerCollision(playerLayer, enemyLayer, true);
 
         Vector2 dashDirection = moveSpeed.normalized;
-        float finalDashSpeed = dashSpeed * dashDistance;
         
 
         // pke raycast untuk memeriksa ada collider gk di depan player
-        RaycastHit2D hit = Physics2D.Raycast(rb.position, dashDirection, finalDashSpeed * Time.fixedDeltaTime, obstacleLayer);
+        RaycastHit2D hit = Physics2D.Raycast(rb.position, dashDirection, dashDistance, obstacleLayer);
 
         if (hit.collider != null)
         {
