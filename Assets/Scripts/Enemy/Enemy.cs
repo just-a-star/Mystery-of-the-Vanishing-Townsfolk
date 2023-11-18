@@ -18,8 +18,9 @@ public class Enemy : MonoBehaviour
     public int baseAttack;
     public float moveSpeed;
     public GameObject deathEffect;
+    public LootItem lutingan;
 
-    public float Health
+  /*  public float Health
     {
         set
         {
@@ -30,7 +31,7 @@ public class Enemy : MonoBehaviour
             }
         }
         get { return health; }
-    }
+    }*/
 
  
 
@@ -44,12 +45,25 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    void MakeLoot()
+    {
+        if (lutingan != null)
+        {
+            GameObject current = lutingan.lot();
+            if (current != null)
+            {
+                Instantiate(current.gameObject, transform.position, Quaternion.identity);
+            }
+        }
+    }
+
     private void Die()
     {
         // Code to handle the enemy's death, such as playing an animation or directly destroying the GameObject
 
         // Handle the enemy's death
         DeathEffect();
+        MakeLoot();
         Destroy(gameObject);
     }
 
@@ -63,7 +77,7 @@ public class Enemy : MonoBehaviour
     }
 
 
-    public void Defeated()
+   /* public void Defeated()
     {
         // Trigger the defeated animation, animasi ini belum ada sih jadi kumatiin dlu
         // animator.SetTrigger("Defeated");
@@ -73,7 +87,7 @@ public class Enemy : MonoBehaviour
 
         // Destroy or deactivate the enemy GameObject after a short delay to allow the animation to play
         Invoke(nameof(RemoveEnemy), 1f); // Adjust the delay as needed for your animation
-    }
+    }*/
 
     public void RemoveEnemy()
     {
