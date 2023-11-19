@@ -13,12 +13,34 @@ public class Genderuwo : Enemy
     Vector2 movement;
     public Animator animator;
 
+    // jump
+    public float jumpHeight = 5f; // Max height of the jump
+    public float jumpDuration = 3f; // Duration of the jump
+    public float jumpCooldown = 5f; // Time in seconds between jumps
+
+    private bool isJumping = false; // To track if Genderuwo is currently jumping
+
+    private int originalLayer; // To store the original layer of the Genderuwo
+    private int jumpLayer; // Layer that doesn't collide with other entities
+
     void Start()
     {
         currentState = EnemyState.idle;
         myRigidbody = GetComponent<Rigidbody2D>();
         target = GameObject.FindWithTag("Player").transform;
         myRigidbody.freezeRotation = true;
+
+        StartCoroutine(JumpRoutine());
+
+
+    }
+
+    void FixedUpdate()
+    {
+        if (!isJumping)
+        {
+            CheckDistance();
+        }
     }
     void Update()
     {
@@ -37,10 +59,6 @@ public class Genderuwo : Enemy
     }
 
 
-    void FixedUpdate()
-    {
-        CheckDistance();
-    }
 
     void CheckDistance()
     {
@@ -109,6 +127,58 @@ public class Genderuwo : Enemy
         // This could involve setting the currentState to attack,
         // triggering an attack animation, and dealing damage to the player.
     }
+
+    // Jump
+
+    IEnumerator PerformJump()
+    {
+        isJumping = true;
+        Vector3 startPosition = transform.position;
+        Vector3 endPosition = target.position;
+        endPosition.y = transform.position.y; // Keep the y-coordinate consistent
+
+        float elapsedTime = 0;
+        while (elapsedTime < jumpDuration)
+        {
+            // Calculate progress in the range of 0 to 1
+            float progress = elapsedTime / jumpDuration;
+
+            // Calculate vertical position using a parabolic trajectory formula
+            float verticalPosition = 4 * jumpHeight * progress * (1 - progress);
+
+            // Interpolate horizontal position only, vertical position is calculated separately
+            Vector3 horizontalPosition = Vector3.Lerp(startPosition, endPosition, progress);
+            transform.position = new Vector3(horizontalPosition.x, startPosition.y + verticalPosition, horizontalPosition.z);
+
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        // Ensure Genderuwo lands at the player's position
+        transform.position = new Vector3(endPosition.x, transform.position.y, endPosition.z);
+        isJumping = false;
+    }
+
+
+
+
+    IEnumerator JumpRoutine()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(jumpCooldown);
+            if (!isJumping)
+            {
+                StartCoroutine(PerformJump());
+            }
+        }
+    }
+
+
+
+
+
+
 
 }
 

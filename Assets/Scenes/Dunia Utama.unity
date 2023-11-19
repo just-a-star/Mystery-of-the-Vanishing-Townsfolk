@@ -25840,6 +25840,10 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5876177115573158516, guid: b9e4adb87d74f78418935cea0a7ce1bd, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 842046198}
+    - target: {fileID: 5876177115573158516, guid: b9e4adb87d74f78418935cea0a7ce1bd, type: 3}
       propertyPath: lutingan
       value: 
       objectReference: {fileID: 11400000, guid: 51fb81afbe3856242907e5daba20291a, type: 2}
