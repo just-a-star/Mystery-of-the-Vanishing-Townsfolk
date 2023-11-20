@@ -280,6 +280,7 @@ MonoBehaviour:
   starPos: {fileID: 11400000, guid: 923531c2048ff5844833c97575b56416, type: 2}
   magicShot: {fileID: 6061520361640624045, guid: c2c5373f33fafb349af42dbc020b2290, type: 3}
   tes: {fileID: 11400000, guid: 03de8db2243d44d40a8b801854b74e24, type: 2}
+  mana: {fileID: 11400000, guid: 7badb352b9a29b24c8e3a702aaf61aea, type: 2}
 --- !u!95 &5315602586717900383
 Animator:
   serializedVersion: 5

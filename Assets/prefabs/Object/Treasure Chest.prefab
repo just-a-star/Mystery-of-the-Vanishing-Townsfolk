@@ -216,5 +216,6 @@ MonoBehaviour:
   contents: {fileID: 11400000, guid: d4210d1ebd3f1364abbcad0930bd571a, type: 2}
   playerInventory: {fileID: 11400000, guid: 03de8db2243d44d40a8b801854b74e24, type: 2}
   isOpen: 0
+  Kebuka: {fileID: 11400000, guid: 8367ba1b8a841b248af3ccbab3465c90, type: 2}
   dialogBox: {fileID: 0}
   dialogText: {fileID: 0}

@@ -20,7 +20,7 @@ public class Heart : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         
-        if(collision.CompareTag("Player") && collision.isTrigger)
+        if(collision.CompareTag("Player") && !collision.isTrigger)
         {
             if (heart.initialValue < 5)
             {

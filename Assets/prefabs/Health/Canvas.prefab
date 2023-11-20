@@ -829,7 +829,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.82
+  m_Value: 0.61
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -846,7 +846,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   magicSlider: {fileID: 8193323531099716646}
-  playerInventory: {fileID: 11400000, guid: 03de8db2243d44d40a8b801854b74e24, type: 2}
+  pMana: {fileID: 11400000, guid: 7badb352b9a29b24c8e3a702aaf61aea, type: 2}
 --- !u!1 &8853162430150618812
 GameObject:
   m_ObjectHideFlags: 0

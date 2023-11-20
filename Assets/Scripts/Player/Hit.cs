@@ -39,12 +39,12 @@ public class Hit : MonoBehaviour
                 {
                     PlayerHealth.singleton.TakeDamage();
                     
-                    if(collision.GetComponent<PlayerMove>().state != PlayerState.stun)
-                    {
+                    /*if(collision.GetComponent<PlayerMove>().state != PlayerState.stun)
+                    {*/
                         hit.GetComponent<PlayerMove>().state = PlayerState.stun;
                         collision.GetComponent<PlayerMove>().Knock(knockTime, damage);
 
-                    }
+                    /*}*/
                 }
             }
             
