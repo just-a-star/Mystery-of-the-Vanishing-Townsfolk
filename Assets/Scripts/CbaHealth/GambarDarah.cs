@@ -8,7 +8,8 @@ public class GambarDarah : MonoBehaviour
     public Sprite fullHeartSprite;
     public Sprite emptyHeartSprite;
 
-    private int playerHealth;  // Nilai aktual darah
+    [SerializeField] private int playerHealth;  // Nilai aktual darah
+    [SerializeField] private float playerMagic; 
 
     private void Awake()
     {
@@ -31,5 +32,15 @@ public class GambarDarah : MonoBehaviour
     public int GetPlayerHealth()
     {
         return playerHealth;
+    }
+
+    public void SetPlayerMagic(float magic)
+    {
+        playerMagic = magic;
+    }
+
+    public float GetPlayerMagic()
+    {
+        return playerMagic;
     }
 }

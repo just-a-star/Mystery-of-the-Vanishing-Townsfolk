@@ -17,11 +17,11 @@ public enum PlayerState
 public class PlayerMove : MonoBehaviour
 {
     public static PlayerMove singleton;
-    //darah
-    public IntValue darah;
     
+    [Header("Darah")]
+    public IntValue darah;
 
-    // dash
+    [Header("Dash")]
     [SerializeField] public float dashSpeed;
     [SerializeField] public float dashDuration;
     [SerializeField] public float dashCooldown;
@@ -29,21 +29,28 @@ public class PlayerMove : MonoBehaviour
     private float lastDashTime = 0;
     [SerializeField] float dashDistance;
     public LayerMask obstacleLayer;
-    
-    
-    // Components
+
+
+    [Header("Komponen")]
     public PlayerState state;
     public Animator animator;
     Rigidbody2D rb;
 
-    // received item
+
+    [Header("Dapat Item")]
     public SpriteRenderer receivedItem;
     public Inventory playerInventory;
 
-    // Movement
+
+    [Header("Move")]
     public float speed;
     Vector2 moveSpeed;
     public VectorValue starPos;
+
+    [Header("Tembakan")]
+    public GameObject magicShot;
+    public Inventory tes;
+    public FloatValue mana;
 
     private void Awake()
     {
@@ -53,7 +60,7 @@ public class PlayerMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //darah
+       
         
         
         /*playerAttack = GetComponent<PlayerAttack>();*/
@@ -76,13 +83,17 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
         inputJalan();
 
         if (Input.GetButtonDown("attack") && state != PlayerState.attack && state != PlayerState.stun && state != PlayerState.interact)
         {
             StartCoroutine(AttackCo());
             /*playerAttack.Attack();*/
+        }
+        else if (Input.GetButtonDown("Nembak") && state != PlayerState.attack && state != PlayerState.stun && state !=PlayerState.interact && GambarDarah.instance.GetPlayerMagic() > 0)
+        {
+            StartCoroutine(SecondAttackCo());
         }
         else if (!isDashing)
         {
@@ -107,6 +118,36 @@ public class PlayerMove : MonoBehaviour
         animator.SetBool("attacking", false);
         yield return new WaitForSeconds(.3f);
         state = PlayerState.walk;
+    }
+    
+    IEnumerator SecondAttackCo()
+    {
+        //animator.SetBool("attacking", true);
+        state = PlayerState.attack;
+        yield return null;
+        MakeTembak();
+        
+        //animator.SetBool("attacking", false);
+        yield return new WaitForSeconds(.3f);
+        state = PlayerState.walk;
+    }
+
+    void MakeTembak()
+    {
+        
+            Vector2 temp = new Vector2(animator.GetFloat("moveX"), animator.GetFloat("moveY"));
+        MagicProjectile sihir = Instantiate(magicShot, transform.position, Quaternion.identity).GetComponent<MagicProjectile>();
+        sihir.gerak(temp, ArahTembakan());
+        MagicManager.singleton.DecreaseMagic();
+
+
+    }
+
+    Vector3 ArahTembakan()
+    {
+        float temp = Mathf.Atan2(animator.GetFloat("moveY"), animator.GetFloat("moveX")) * Mathf.Rad2Deg;
+
+        return new Vector3(0, 0, temp);
     }
 
 

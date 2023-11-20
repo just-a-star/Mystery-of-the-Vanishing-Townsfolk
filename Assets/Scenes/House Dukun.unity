@@ -669,6 +669,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 359657559692905301, guid: d5685129a43e82d4fbe0ba47d46732dd, type: 3}
+      propertyPath: pMana
+      value: 
+      objectReference: {fileID: 11400000, guid: 7badb352b9a29b24c8e3a702aaf61aea, type: 2}
+    - target: {fileID: 359657559692905301, guid: d5685129a43e82d4fbe0ba47d46732dd, type: 3}
+      propertyPath: currentMagic
+      value: 
+      objectReference: {fileID: 11400000, guid: 7badb352b9a29b24c8e3a702aaf61aea, type: 2}
     - target: {fileID: 1987338862516890837, guid: d5685129a43e82d4fbe0ba47d46732dd, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -811,6 +819,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6608474361070101204, guid: d5685129a43e82d4fbe0ba47d46732dd, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7929678827528067083, guid: d5685129a43e82d4fbe0ba47d46732dd, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7929678827528067083, guid: d5685129a43e82d4fbe0ba47d46732dd, type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8633776643751887588, guid: d5685129a43e82d4fbe0ba47d46732dd, type: 3}
@@ -5521,6 +5537,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fullHeartSprite: {fileID: -1431114619, guid: ae00fdd263f0ed647902f44221a02040, type: 3}
   emptyHeartSprite: {fileID: -95179546, guid: ae00fdd263f0ed647902f44221a02040, type: 3}
+  playerHealth: 0
+  playerMagic: 0
 --- !u!4 &1095741493
 Transform:
   m_ObjectHideFlags: 0

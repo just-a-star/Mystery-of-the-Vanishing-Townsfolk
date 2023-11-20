@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4169226510589196517}
   - component: {fileID: 3930301541200999585}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Context Clue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: 5315602586717900383}
   - component: {fileID: 4079164395589931651}
   - component: {fileID: 4567216045411918098}
-  m_Layer: 7
+  m_Layer: 9
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -268,7 +268,7 @@ MonoBehaviour:
   dashSpeed: 50
   dashDuration: 0.1
   dashCooldown: 0.5
-  dashDistance: 1
+  dashDistance: 0
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -278,6 +278,8 @@ MonoBehaviour:
   playerInventory: {fileID: 11400000, guid: 03de8db2243d44d40a8b801854b74e24, type: 2}
   speed: 8
   starPos: {fileID: 11400000, guid: 923531c2048ff5844833c97575b56416, type: 2}
+  magicShot: {fileID: 6061520361640624045, guid: c2c5373f33fafb349af42dbc020b2290, type: 3}
+  tes: {fileID: 11400000, guid: 03de8db2243d44d40a8b801854b74e24, type: 2}
 --- !u!95 &5315602586717900383
 Animator:
   serializedVersion: 5
@@ -376,7 +378,7 @@ GameObject:
   - component: {fileID: 7678750672115100689}
   - component: {fileID: 1451360908912357242}
   - component: {fileID: 2720479093593606425}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Left Hit
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -476,7 +478,7 @@ GameObject:
   - component: {fileID: 1400175653737832747}
   - component: {fileID: 8300965926537732816}
   - component: {fileID: 2942941385438292850}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Down Hit
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -575,7 +577,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2698162435723015619}
   - component: {fileID: 878288292443037916}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Key
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -660,7 +662,7 @@ GameObject:
   - component: {fileID: 4616852218552739940}
   - component: {fileID: 2996359635025074278}
   - component: {fileID: 1653125586437045921}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Up Hit
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -760,7 +762,7 @@ GameObject:
   - component: {fileID: 2809258391584320050}
   - component: {fileID: 2345791911262686291}
   - component: {fileID: 1696943932389788273}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Right Hit
   m_TagString: Player
   m_Icon: {fileID: 0}
