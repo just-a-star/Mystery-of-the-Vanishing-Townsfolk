@@ -17,8 +17,8 @@ public class MagicManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GambarDarah.instance.SetPlayerMagic(pMana.initialValue);
-
+        /*GambarDarah.instance.SetPlayerMagic(pMana.initialValue);
+*/
         UpdateMagicUI();
         
     }

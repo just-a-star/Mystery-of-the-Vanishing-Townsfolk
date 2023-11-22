@@ -776,7 +776,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764882260a68c1f428f8c7af71b8879a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NewGame: House Dukun
+  NewGame: OpeningCutScene
 --- !u!1 &1040477583
 GameObject:
   m_ObjectHideFlags: 0

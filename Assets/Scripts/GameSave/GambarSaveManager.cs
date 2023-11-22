@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class GambarDarah : MonoBehaviour
@@ -7,9 +8,10 @@ public class GambarDarah : MonoBehaviour
     // Menambahkan variabel untuk menyimpan gambar hati penuh dan kosong
     /*public Sprite fullHeartSprite;
     public Sprite emptyHeartSprite;*/
-
+/*
     [SerializeField] private float playerHealth;  // Nilai aktual darah
-    [SerializeField] private float playerMagic; 
+    [SerializeField] private float playerMagic;*/ 
+public List<ScriptableObject> objects = new List<ScriptableObject>();
 
     private void Awake()
     {
@@ -24,7 +26,7 @@ public class GambarDarah : MonoBehaviour
         }
     }
 
-    public void SetPlayerHealth(float health)
+   /* public void SetPlayerHealth(float health)
     {
         playerHealth = health;
     }
@@ -42,5 +44,5 @@ public class GambarDarah : MonoBehaviour
     public float GetPlayerMagic()
     {
         return playerMagic;
-    }
+    }*/
 }

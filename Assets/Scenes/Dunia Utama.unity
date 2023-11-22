@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 61189234}
   - component: {fileID: 61189233}
   m_Layer: 0
-  m_Name: SaveDarah
+  m_Name: SaveData
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -152,8 +152,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 679d9c9fba5ac31489fda2cabbf09ce4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealth: 0
-  playerMagic: 0
+  objects:
+  - {fileID: 11400000, guid: 450728f448cf7b34eaa239cc2d66130b, type: 2}
+  - {fileID: 11400000, guid: 7badb352b9a29b24c8e3a702aaf61aea, type: 2}
+  - {fileID: 11400000, guid: 8367ba1b8a841b248af3ccbab3465c90, type: 2}
 --- !u!4 &61189234
 Transform:
   m_ObjectHideFlags: 0

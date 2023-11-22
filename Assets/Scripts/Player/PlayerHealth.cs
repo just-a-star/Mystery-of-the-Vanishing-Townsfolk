@@ -20,7 +20,7 @@ public class PlayerHealth : MonoBehaviour
         if (GambarDarah.instance != null)
         {
             // Mengatur nilai darah saat memulai scene
-            GambarDarah.instance.SetPlayerHealth(pHealth.initialValue);
+            /*GambarDarah.instance.SetPlayerHealth(pHealth.initialValue);*/
             UpdateHealthUI();
         }
         else
@@ -48,7 +48,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if(pHealth.initialValue <= pHealth.defaultValue)
         {
-            GambarDarah.instance.SetPlayerHealth(GambarDarah.instance.GetPlayerHealth() + 1);
+            pHealth.initialValue += 1;
             UpdateHealthUI();
         }
     }
