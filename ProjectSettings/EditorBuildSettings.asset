@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/StartMenu.unity
+    guid: 3fad5b2d4f28519499aeed6807669f2d
+  - enabled: 1
     path: Assets/Scenes/House Dukun.unity
     guid: ddb521d5dee546342a8f52ba3dbd298d
   - enabled: 1

@@ -53,7 +53,7 @@ public class TreasureChest : Interactable
         playerInventory.currentItem = contents;
 
         //player anim
-        PlayerMove.singleton.RaiseItem();
+        PlayerController.singleton.RaiseItem();
 
         context.SetActive(false);
 
@@ -71,7 +71,7 @@ public class TreasureChest : Interactable
         /*gambar.SetActive(false);*/
 
         //player anim stop
-        PlayerMove.singleton.RaiseItem();
+        PlayerController.singleton.RaiseItem();
 
         playerInRange = false;
     }

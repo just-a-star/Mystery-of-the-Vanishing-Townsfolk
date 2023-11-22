@@ -8,7 +8,7 @@ public class Heart : MonoBehaviour
 
     public static Heart singleton;
 
-    public IntValue heart;
+    public FloatValue heart;
 
 
     private void Awake()
@@ -22,7 +22,7 @@ public class Heart : MonoBehaviour
         
         if(collision.CompareTag("Player") && !collision.isTrigger)
         {
-            if (heart.initialValue < 5)
+            if (heart.initialValue < heart.defaultValue)
             {
                 heart.initialValue++;
 

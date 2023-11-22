@@ -5,10 +5,10 @@ public class GambarDarah : MonoBehaviour
     public static GambarDarah instance;
 
     // Menambahkan variabel untuk menyimpan gambar hati penuh dan kosong
-    public Sprite fullHeartSprite;
-    public Sprite emptyHeartSprite;
+    /*public Sprite fullHeartSprite;
+    public Sprite emptyHeartSprite;*/
 
-    [SerializeField] private int playerHealth;  // Nilai aktual darah
+    [SerializeField] private float playerHealth;  // Nilai aktual darah
     [SerializeField] private float playerMagic; 
 
     private void Awake()
@@ -24,12 +24,12 @@ public class GambarDarah : MonoBehaviour
         }
     }
 
-    public void SetPlayerHealth(int health)
+    public void SetPlayerHealth(float health)
     {
         playerHealth = health;
     }
 
-    public int GetPlayerHealth()
+    public float GetPlayerHealth()
     {
         return playerHealth;
     }

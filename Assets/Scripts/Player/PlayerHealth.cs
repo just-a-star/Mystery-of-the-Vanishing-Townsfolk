@@ -6,10 +6,9 @@ using UnityEngine.UI;
 public class PlayerHealth : MonoBehaviour
 {
     public static PlayerHealth singleton;
-    public IntValue pHealth;
-    public Image[] healthUI;
-    public Sprite full;
-    public Sprite empty;
+    public FloatValue pHealth;
+    public Image healthUI;
+    public GameObject player;
 
     private void Awake()
     {
@@ -31,19 +30,23 @@ public class PlayerHealth : MonoBehaviour
     }
 
 
-    public void TakeDamage()
+    public void TakeDamage(float damage)
     {
-        if(Hit.Instance.damage == 1)
+        pHealth.initialValue -= damage;
+
+        if(pHealth.initialValue <= 0 )
         {
-            GambarDarah.instance.SetPlayerHealth(GambarDarah.instance.GetPlayerHealth() - 1);
-            UpdateHealthUI();
+            pHealth.initialValue = 0;
+            Destroy(player);
         }
+
+            UpdateHealthUI();
             
     }
 
     public void GainHeart()
     {
-        if(pHealth.initialValue <= healthUI.Length)
+        if(pHealth.initialValue <= pHealth.defaultValue)
         {
             GambarDarah.instance.SetPlayerHealth(GambarDarah.instance.GetPlayerHealth() + 1);
             UpdateHealthUI();
@@ -52,18 +55,8 @@ public class PlayerHealth : MonoBehaviour
 
     private void UpdateHealthUI()
     {
-        int currentHealth = GambarDarah.instance.GetPlayerHealth();
-
-        for (int i = 0; i < healthUI.Length; i++)
-        {
-            if (i < currentHealth)
-            {
-                healthUI[i].sprite = GambarDarah.instance.fullHeartSprite;
-            }
-            else
-            {
-                healthUI[i].sprite = GambarDarah.instance.emptyHeartSprite;
-            }
-        }
+        
+        float fillAmount = pHealth.initialValue / pHealth.defaultValue;
+        healthUI.fillAmount = fillAmount;
     }
 }
