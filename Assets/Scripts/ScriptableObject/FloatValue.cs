@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu]
-public class FloatValue : ScriptableObject, ISerializationCallbackReceiver
+[System.Serializable]
+public class FloatValue : ScriptableObject
 {
     public float initialValue;
     public float defaultValue;
 
-    public void OnAfterDeserialize()
+    private void OnEnable()
     {
         initialValue = defaultValue;
     }
 
-    public void OnBeforeSerialize() { }
 }

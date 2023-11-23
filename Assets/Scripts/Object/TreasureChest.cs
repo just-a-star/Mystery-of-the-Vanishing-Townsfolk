@@ -19,7 +19,7 @@ public class TreasureChest : Interactable
     void Start()
     {
         anim = GetComponent<Animator>();
-        isOpen = Kebuka.defaultValue;
+        isOpen = Kebuka.initialValue;
 
         if(isOpen)
         {
@@ -62,7 +62,7 @@ public class TreasureChest : Interactable
         isOpen = true;
         
         anim.SetBool("opened", true);
-        Kebuka.defaultValue = isOpen;
+        Kebuka.initialValue = isOpen;
     }
 
     public void ChestOpened()

@@ -69,14 +69,7 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         animator.SetFloat("moveX", 0);
         animator.SetFloat("moveY", -1);
-        if (starPos != null)
-        {
-            transform.position = starPos.initialValue;
-            
-        } else
-        {
-            Debug.Log("make sure to set the starting position");
-        }
+        transform.position = starPos.initialValue;
 
     }
 
