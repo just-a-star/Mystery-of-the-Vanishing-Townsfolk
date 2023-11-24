@@ -12,36 +12,76 @@ public enum EnemyState
 
 public class Enemy : MonoBehaviour
 {
+    [Header("state Enemy")]
     public EnemyState currentState;
+
+    [Header("Health")]
     public float health;
-    public string enemyName;
-    public int baseAttack;
+
+    [Header("Speed")]
     public float moveSpeed;
+
+    [Header("Efek & dropItem")]
     public GameObject deathEffect;
     public LootItem lutingan;
 
-  /*  public float Health
+    [Header("flash")]
+    bool flashActive;
+    [SerializeField] float flashLength = 0f;
+    float flashCounter = 0f;
+    public SpriteRenderer enemySprite;
+
+    private void Start()
     {
-        set
+        enemySprite = GetComponent<SpriteRenderer>();
+    }
+
+    private void FixedUpdate()
+    {
+        if(flashActive == true)
         {
-            health = value;
-            if (health <= 0)
+            if (flashCounter > flashLength * .99f)
             {
-                Defeated(); // Call Defeated when health reaches 0 or below
+                
+                enemySprite.color = new Color(enemySprite.color.r, enemySprite.color.g, enemySprite.color.b, 0f);
+            } else if (flashCounter > flashLength * .82f)
+            {
+                enemySprite.color = new Color(enemySprite.color.r, enemySprite.color.g, enemySprite.color.b, 1f);
+            }else if (flashCounter > flashLength * .66f)
+            {
+                enemySprite.color = new Color(enemySprite.color.r, enemySprite.color.g, enemySprite.color.b, 0f);
+            }else if (flashCounter > flashLength * .49f)
+            {
+                enemySprite.color = new Color(enemySprite.color.r, enemySprite.color.g, enemySprite.color.b, 1f);
+            }else if (flashCounter > flashLength * .33f)
+            {
+                enemySprite.color = new Color(enemySprite.color.r, enemySprite.color.g, enemySprite.color.b, 0f);
+            }else if (flashCounter > flashLength * .16f)
+            {
+                enemySprite.color = new Color(enemySprite.color.r, enemySprite.color.g, enemySprite.color.b, 1f);
+            }else if (flashCounter > 0)
+            {
+                enemySprite.color = new Color(enemySprite.color.r, enemySprite.color.g, enemySprite.color.b, 0f);
+            }else
+            {
+                enemySprite.color = new Color(enemySprite.color.r, enemySprite.color.g, enemySprite.color.b, 1f);
+                flashActive = false;
             }
+            flashCounter -= Time.deltaTime;
         }
-        get { return health; }
-    }*/
 
- 
-
-    // Call this function to apply damage to the enemy
+    }
     void TakeDamage(float damage)
     {
+        if( health > 0 ) {
         health -= damage;
-        if (health <= 0)
+        flashActive = true;
+        flashCounter = flashLength;
+
+            if (health <= 0)
         {
             Die();
+        }
         }
     }
 
@@ -59,9 +99,6 @@ public class Enemy : MonoBehaviour
 
     private void Die()
     {
-        // Code to handle the enemy's death, such as playing an animation or directly destroying the GameObject
-
-        // Handle the enemy's death
         DeathEffect();
         MakeLoot();
         Destroy(gameObject);
@@ -77,21 +114,8 @@ public class Enemy : MonoBehaviour
     }
 
 
-   /* public void Defeated()
-    {
-        // Trigger the defeated animation, animasi ini belum ada sih jadi kumatiin dlu
-        // animator.SetTrigger("Defeated");
-
-        // Optionally, disable the enemy's collider, movement, etc.
-        // GetComponent<Collider2D>().enabled = false;
-
-        // Destroy or deactivate the enemy GameObject after a short delay to allow the animation to play
-        Invoke(nameof(RemoveEnemy), 1f); // Adjust the delay as needed for your animation
-    }*/
-
     public void RemoveEnemy()
     {
-        // Destroy the enemy GameObject
         Destroy(gameObject);
     }
 

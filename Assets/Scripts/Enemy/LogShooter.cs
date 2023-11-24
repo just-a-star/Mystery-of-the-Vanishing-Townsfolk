@@ -1,21 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class LogShooter : Enemy
 {
-    [Header("ampun log")]
+    [Header("Target Enemy")]
     public Transform target;
     public float chaseRadius;
     public float attackRadius;
 
 
-    [Header("asli")]
+    [Header("Projectile")]
     public GameObject projectile;
     public float fireDelay;
     float fireDelaySeconds;
     public bool canFire = true;
     Animator anim;
+
+    public Collider2D boundary;
 
     private void Start()
     {
@@ -25,6 +28,8 @@ public class LogShooter : Enemy
 
     private void Update()
     {
+        
+        CheckDistance();
         fireDelaySeconds -= Time.deltaTime;
         if (fireDelaySeconds <= 0)
         {
@@ -33,25 +38,20 @@ public class LogShooter : Enemy
         }
     }
 
-    private void FixedUpdate()
-    {
-        CheckDistance();
-    }
     public void CheckDistance()
     {
-        if (Vector3.Distance(target.position,
-                            transform.position) <= chaseRadius
-           && Vector3.Distance(target.position,
-                               transform.position) > attackRadius)
+        if (boundary.OverlapPoint(target.transform.position))
         {
                 if (canFire)
                 {
                     Vector3 tempVector = target.transform.position - transform.position;
                     GameObject current = Instantiate(projectile, transform.position, Quaternion.identity);
 
+                anim.SetBool("attacking", true);
+                anim.SetFloat("moveX", (target.position.x - transform.position.x));
+                anim.SetFloat("moveY", (target.position.y - transform.position.y));
                 current.GetComponent<Batu>().Launch(tempVector);
                     canFire = false;
-                anim.SetBool("attacking", true);
                 }
 
             
@@ -60,5 +60,7 @@ public class LogShooter : Enemy
             anim.SetBool("attacking", false);
         }
     }
+
+    
 
 }

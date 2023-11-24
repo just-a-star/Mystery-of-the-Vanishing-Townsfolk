@@ -200,8 +200,10 @@ public class PlayerController : MonoBehaviour
 
         int playerLayer = LayerMask.NameToLayer("Player");
         int enemyLayer = LayerMask.NameToLayer("Musuh");
+        int ProjectileLayer = LayerMask.NameToLayer("MusuhProjectile");
 
         Physics2D.IgnoreLayerCollision(playerLayer, enemyLayer, true);
+        Physics2D.IgnoreLayerCollision(playerLayer, ProjectileLayer, true);
 
         Vector2 dashDirection = moveSpeed.normalized;
         
@@ -220,15 +222,16 @@ public class PlayerController : MonoBehaviour
             // Tidak ada collider yang menghalangi, jadi kita melakukan dash
             rb.velocity = dashDirection * dashSpeed;
             Debug.Log("Dash Velocity: " + rb.velocity);
-            StartCoroutine(EndDash(playerLayer, enemyLayer));
+            StartCoroutine(EndDash(playerLayer, enemyLayer, ProjectileLayer));
         }
     }
 
-    IEnumerator EndDash(int playerLayer, int enemyLayer)
+    IEnumerator EndDash(int playerLayer, int enemyLayer, int ProjectileLayer)
     {
         yield return new WaitForSeconds(dashDuration);
 
         Physics2D.IgnoreLayerCollision(playerLayer, enemyLayer, false);
+        Physics2D.IgnoreLayerCollision(playerLayer, ProjectileLayer, false);
 
         isDashing = false;
         state = PlayerState.walk;
