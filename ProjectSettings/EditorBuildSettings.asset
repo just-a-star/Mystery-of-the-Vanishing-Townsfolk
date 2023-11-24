@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/OpeningCutScene.unity
     guid: 67c80f356d0acf3449fdee8f089a139c
   - enabled: 1
+    path: Assets/Scenes/CutScene2.unity
+    guid: aead571ae7f331f4e9aafd0434a2b1bb
+  - enabled: 1
     path: Assets/Scenes/House Dukun.unity
     guid: ddb521d5dee546342a8f52ba3dbd298d
   - enabled: 1

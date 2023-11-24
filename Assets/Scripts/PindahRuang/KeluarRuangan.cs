@@ -9,10 +9,6 @@ public class KeluarRuangan : MonoBehaviour
     public Vector2 playerPosition;
     public VectorValue playerStorage;
 
-    public Vector2 cameraNewMax;
-    public Vector2 cameraNewMin;
-    public VectorValue cameraMin;
-    public VectorValue cameraMax;
 
     FadeInOut fade;
     // Start is called before the first frame update
@@ -27,7 +23,6 @@ public class KeluarRuangan : MonoBehaviour
     {
         fade.FadeIn();
         yield return new WaitForSeconds(1);
-        ResetCamera();
         SceneManager.LoadScene(sceneToLoad);
     }
 
@@ -40,9 +35,4 @@ public class KeluarRuangan : MonoBehaviour
         }
     }
 
-    public void ResetCamera()
-    {
-        cameraMax.initialValue = cameraNewMax;
-        cameraMin.initialValue = cameraNewMin;
-    }
 }

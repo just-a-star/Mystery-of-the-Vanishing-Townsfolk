@@ -125,12 +125,12 @@ public class PlayerController : MonoBehaviour
     
     IEnumerator SecondAttackCo()
     {
-        //animator.SetBool("attacking", true);
+        animator.SetBool("tembak", true);
         state = PlayerState.attack;
         yield return null;
         MakeTembak();
         
-        //animator.SetBool("attacking", false);
+        animator.SetBool("tembak", false);
         yield return new WaitForSeconds(.3f);
         state = PlayerState.walk;
     }

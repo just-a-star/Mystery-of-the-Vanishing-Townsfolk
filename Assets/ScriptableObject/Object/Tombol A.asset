@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Tombol A
   m_EditorClassIdentifier: 
   initialValue: 0
-  defaultValue: 0
+  defaultValue: 1
