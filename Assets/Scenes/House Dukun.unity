@@ -5594,10 +5594,6 @@ MonoBehaviour:
   sceneToLoad: Dunia Utama
   playerPosition: {x: -15.45, y: -9}
   playerStorage: {fileID: 11400000, guid: 923531c2048ff5844833c97575b56416, type: 2}
-  cameraNewMax: {x: -10, y: -5}
-  cameraNewMin: {x: -19, y: -19}
-  cameraMin: {fileID: 11400000, guid: 672e009c8c41f0043951647ec090e038, type: 2}
-  cameraMax: {fileID: 11400000, guid: a7928d1c20c25574ab70f7d3a7d76b52, type: 2}
 --- !u!4 &1197812743 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 464654868163450760, guid: ded21328c5b6f8c4b9c6f6614db809f6, type: 3}

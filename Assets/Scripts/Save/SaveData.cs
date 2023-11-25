@@ -65,7 +65,7 @@ public class SaveData : MonoBehaviour
 
     public void ResetGame()
     {
-        for (int i = 0; i < objects.Count; i++)
+        for (int i = 0; i <= objects.Count -1; i++)
         {
             string filePath = Application.persistentDataPath + $"/objekPlayer{i}.json";
 

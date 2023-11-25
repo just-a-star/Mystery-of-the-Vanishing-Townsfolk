@@ -14,7 +14,7 @@ public class Tombol : MonoBehaviour
     void Start()
     {
         gambar = GetComponent<SpriteRenderer>();
-        active = storedValue.defaultValue;
+        active = storedValue.initialValue;
 
         if(active)
         {
@@ -25,7 +25,7 @@ public class Tombol : MonoBehaviour
     public void ActiveTombol()
     {
         active = true;
-        storedValue.defaultValue = active;
+        storedValue.initialValue = active;
         penutup.Open();
         gambar.sprite = activeSprite;
     }

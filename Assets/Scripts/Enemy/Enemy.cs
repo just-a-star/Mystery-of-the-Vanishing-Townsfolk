@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public enum EnemyState
 {
@@ -16,7 +17,10 @@ public class Enemy : MonoBehaviour
     public EnemyState currentState;
 
     [Header("Health")]
+    float maxHealth;
     public float health;
+    public GameObject holder;
+    public Image healthUI;
 
     [Header("Speed")]
     public float moveSpeed;
@@ -31,9 +35,16 @@ public class Enemy : MonoBehaviour
     float flashCounter = 0f;
     public SpriteRenderer enemySprite;
 
+    private void Awake()
+    {
+        maxHealth = health;
+    }
+
     private void Start()
     {
         enemySprite = GetComponent<SpriteRenderer>();
+        healthUI = GetComponent<Image>();
+        
     }
 
     private void FixedUpdate()
@@ -73,9 +84,15 @@ public class Enemy : MonoBehaviour
     }
     void TakeDamage(float damage)
     {
+
+        holder.SetActive(true);
         if( health > 0 ) {
         health -= damage;
-        flashActive = true;
+            float fillAmount = health / maxHealth;
+            healthUI.fillAmount = fillAmount;
+
+
+            flashActive = true;
         flashCounter = flashLength;
 
             if (health <= 0)

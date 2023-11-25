@@ -127,11 +127,11 @@ public class PlayerController : MonoBehaviour
     {
         animator.SetBool("tembak", true);
         state = PlayerState.attack;
-        yield return null;
+        yield return new WaitForSeconds(.1f);
         MakeTembak();
         
         animator.SetBool("tembak", false);
-        yield return new WaitForSeconds(.3f);
+        yield return new WaitForSeconds(.5f);
         state = PlayerState.walk;
     }
 
