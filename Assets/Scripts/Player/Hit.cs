@@ -6,15 +6,36 @@ public class Hit : MonoBehaviour
 {
     public static Hit Instance;
 
+    [Header("knockback")]
     public float dorongan;
     public float knockTime;
     public int damage;
 
-    bool stay = false;
+    [Header("dps")]
+    float dps = 1f;
+    bool isTouching;
+
+    //bool stay = false;
 
     private void Awake()
     {
         Instance = this;
+    }
+
+    private void Update()
+    {
+        if (isTouching)
+        {
+            dps -= Time.deltaTime;
+            if( dps <= 0 )
+            {
+                Debug.Log(isTouching);
+                PlayerHealth.singleton.TakeDamage(damage);
+                dps = 1f;
+
+                Debug.Log(dps);
+            }
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -27,44 +48,39 @@ public class Hit : MonoBehaviour
             {
                 Vector2 difference = hit.transform.position - transform.position;
                 difference = difference.normalized * dorongan;
-                hit.AddForce(difference, ForceMode2D.Impulse);
+                
 
                 if (collision.gameObject.CompareTag("Enemy") && collision.isTrigger)
                 {
+                    hit.AddForce(difference, ForceMode2D.Impulse);
                     hit.GetComponent<Enemy>().currentState = EnemyState.stagger;
                     collision.GetComponent<Enemy>().Knock(hit, knockTime, damage);
                 }
 
                 if (collision.gameObject.CompareTag("Player") && collision.isTrigger)
                 {
-                    stay = true;
-                    StartCoroutine(DamagePlayerRepeatedly());
-                    /*if(collision.GetComponent<PlayerMove>().state != PlayerState.stun)
-                    {*/
+                    hit.AddForce(difference, ForceMode2D.Impulse);
+                    PlayerHealth.singleton.TakeDamage(damage);
                     hit.GetComponent<PlayerController>().state = PlayerState.stun;
                     collision.GetComponent<PlayerController>().Knock(knockTime);
-                    /*}*/
                 }
             }
 
         }
     }
 
-    private IEnumerator DamagePlayerRepeatedly()
+
+    private void OnCollisionStay2D(Collision2D collision)
     {
-        while (stay)
-        {
-            PlayerHealth.singleton.TakeDamage(damage);
-            yield return new WaitForSeconds(1f);
+        if (collision.gameObject.CompareTag("Player")) { 
+        isTouching = true;
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            stay = false;
-            StopCoroutine(DamagePlayerRepeatedly());
+        if(collision.gameObject.CompareTag("Player")) { 
+        isTouching = false;
         }
     }
 }

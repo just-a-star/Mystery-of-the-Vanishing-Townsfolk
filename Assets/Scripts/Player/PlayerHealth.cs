@@ -37,7 +37,8 @@ public class PlayerHealth : MonoBehaviour
         if(pHealth.initialValue <= 0 )
         {
             pHealth.initialValue = 0;
-            Destroy(player);
+            player.SetActive(false);
+            LoseMenu.singleton.kalah();
         }
 
             UpdateHealthUI();

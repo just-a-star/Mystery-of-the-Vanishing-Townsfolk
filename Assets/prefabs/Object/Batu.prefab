@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 178188906412125125}
   - component: {fileID: 8376007274942167670}
   - component: {fileID: 6475624511138484435}
-  - component: {fileID: 3344708118338685066}
   - component: {fileID: 4737345920722663776}
+  - component: {fileID: 2221789204326284493}
   m_Layer: 6
   m_Name: Batu
   m_TagString: Untagged
@@ -131,21 +131,6 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!114 &3344708118338685066
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 975949021136854099}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79a7cdda8d0c0e547a350255d3bf3d09, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dorongan: 2
-  knockTime: 0.5
-  damage: 1
 --- !u!58 &4737345920722663776
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -181,3 +166,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.25
+--- !u!114 &2221789204326284493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 975949021136854099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91232fc1089c8e846b89e753c29be248, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dorongan: 2
+  knockTime: 0.2
+  damage: 1

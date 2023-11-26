@@ -10,6 +10,9 @@ public class LogShooter : Enemy
     public float chaseRadius;
     public float attackRadius;
 
+    [Header("Posisi Awal")]
+    public Transform homePosition;
+
 
     [Header("Projectile")]
     public GameObject projectile;
@@ -55,8 +58,11 @@ public class LogShooter : Enemy
                 }
 
             
-        } else
+        }
+        
+        else
         {
+            transform.position = Vector3.MoveTowards(transform.position, homePosition.position, moveSpeed * Time.deltaTime);
             anim.SetBool("attacking", false);
         }
     }

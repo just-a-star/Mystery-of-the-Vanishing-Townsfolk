@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4031490302972629820}
   - component: {fileID: 6068539481330283303}
   - component: {fileID: 6383849573044916480}
-  - component: {fileID: 9099136957380162302}
+  - component: {fileID: 277050273757412470}
   m_Layer: 6
   m_Name: Genderuwo
   m_TagString: Enemy
@@ -209,11 +209,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentState: 1
   health: 15
-  enemyName: Genderuwo
-  baseAttack: 1
+  holder: {fileID: 0}
+  healthUI: {fileID: 0}
   moveSpeed: 2.53
   deathEffect: {fileID: 0}
   lutingan: {fileID: 11400000, guid: 51fb81afbe3856242907e5daba20291a, type: 2}
+  flashLength: 0
+  enemySprite: {fileID: 0}
   target: {fileID: 0}
   chaseRadius: 62.4
   attackRadius: 5.73
@@ -222,7 +224,7 @@ MonoBehaviour:
   jumpHeight: 15
   jumpDuration: 0.5
   jumpCooldown: 5
---- !u!114 &9099136957380162302
+--- !u!114 &277050273757412470
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -231,7 +233,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5885848944113454614}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79a7cdda8d0c0e547a350255d3bf3d09, type: 3}
+  m_Script: {fileID: 11500000, guid: 91232fc1089c8e846b89e753c29be248, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dorongan: 2

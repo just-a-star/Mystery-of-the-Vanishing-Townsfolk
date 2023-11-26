@@ -337,8 +337,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 03de8db2243d44d40a8b801854b74e24, type: 2}
   - {fileID: 11400000, guid: 8367ba1b8a841b248af3ccbab3465c90, type: 2}
   - {fileID: 11400000, guid: 2e607f2f5eb93ab43accb147e6b569a3, type: 2}
-  - {fileID: 11400000, guid: ed826ff159bc27e4ca14ab843d433eef, type: 2}
-  - {fileID: 11400000, guid: 6e2fbabbfe0b30d4eaf0faa8cdad40a0, type: 2}
   AdaFile: 0
   jarakTarget: 5
   DialogBox: {fileID: 9016711615124491664}
@@ -446,7 +444,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &9127875245023947486
 Transform:
   m_ObjectHideFlags: 0
