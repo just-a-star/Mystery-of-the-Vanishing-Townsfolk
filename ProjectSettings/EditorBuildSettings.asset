@@ -23,4 +23,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Dunia Gaib.unity
     guid: 64d17cca6b865254583be79775494acf
+  - enabled: 1
+    path: Assets/Scenes/Gua.unity
+    guid: c10ef51f377df7b43ab39216ea8c4a45
+  - enabled: 1
+    path: Assets/Scenes/Hell.unity
+    guid: 0d79d27fdbfd08f47a7d417c761b8833
   m_configObjects: {}

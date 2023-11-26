@@ -6,13 +6,18 @@ using static UnityEditor.Timeline.TimelinePlaybackControls;
 
 public class TreasureChest : Interactable
 {
-    /*public GameObject gambar;*/
+    [Header("Item")]
     public Item contents;
     public Inventory playerInventory;
+
+    [Header("Kondisi Buka")]
     public bool isOpen;
     public BoolValue Kebuka;
+
+    [Header("Dialog Box")]
     public GameObject dialogBox;
     public Text dialogText;
+    
     Animator anim;
 
     // Start is called before the first frame update

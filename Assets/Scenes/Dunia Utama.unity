@@ -8072,6 +8072,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 170263960}
     - target: {fileID: 3193896373546244161, guid: ded21328c5b6f8c4b9c6f6614db809f6, type: 3}
+      propertyPath: context
+      value: 
+      objectReference: {fileID: 1340339947}
+    - target: {fileID: 3193896373546244161, guid: ded21328c5b6f8c4b9c6f6614db809f6, type: 3}
       propertyPath: cameraMax
       value: 
       objectReference: {fileID: 11400000, guid: d6e28db57d2794a4d9018208a984023c, type: 2}
@@ -8105,7 +8109,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3193896373546244161, guid: ded21328c5b6f8c4b9c6f6614db809f6, type: 3}
       propertyPath: playerPosition.y
-      value: -37
+      value: -43
       objectReference: {fileID: 0}
     - target: {fileID: 3507764121677933206, guid: ded21328c5b6f8c4b9c6f6614db809f6, type: 3}
       propertyPath: m_Size.x
@@ -16641,7 +16645,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.3, y: -20.5, z: -10}
+  m_LocalPosition: {x: -14.3, y: -18.41, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -70428,6 +70432,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1438543189208245228, guid: 9c530e180a7ad8a4c83fef959b6ffdf2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4079164395589931651, guid: 9c530e180a7ad8a4c83fef959b6ffdf2, type: 3}
       propertyPath: healthUI
       value: 
@@ -70538,6 +70546,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 170263960}
     - target: {fileID: 3193896373546244161, guid: ded21328c5b6f8c4b9c6f6614db809f6, type: 3}
+      propertyPath: context
+      value: 
+      objectReference: {fileID: 1340339947}
+    - target: {fileID: 3193896373546244161, guid: ded21328c5b6f8c4b9c6f6614db809f6, type: 3}
       propertyPath: cameraMax
       value: 
       objectReference: {fileID: 11400000, guid: fa66544297ce36545bf5bf7264cfe2e6, type: 2}
@@ -70626,10 +70638,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3751006420780496368, guid: 66e8a66d92eef7d4d95f21b015f69222, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66e8a66d92eef7d4d95f21b015f69222, type: 3}
 --- !u!1001 &4918106830010905090
 PrefabInstance:

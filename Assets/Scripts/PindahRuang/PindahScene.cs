@@ -5,17 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class PindahScene : MonoBehaviour
 {
-
+    [Header("load Scene")]
     public string sceneToLoad;
     public bool playerInRange;
+
+    [Header("posisi Player")]
     public Vector2 playerPosition;
     public VectorValue playerStorage;
 
-    public Vector2 cameraNewMax;
-    public Vector2 cameraNewMin;
-    public VectorValue cameraMin;
-    public VectorValue cameraMax;
-
+    [Header("Fading")]
     FadeInOut fade;
 
     void Start()
@@ -29,7 +27,6 @@ public class PindahScene : MonoBehaviour
     {
         fade.FadeIn();
         yield return new WaitForSeconds(1);
-        ResetCamera();
         SceneManager.LoadScene(sceneToLoad);
     }
 
@@ -59,9 +56,4 @@ public class PindahScene : MonoBehaviour
         }
     }
 
-    public void ResetCamera()
-    {
-        cameraMax.initialValue = cameraNewMax;
-        cameraMin.initialValue = cameraNewMin;
-    }
 }

@@ -80,6 +80,9 @@ public class SaveData : MonoBehaviour
                 else if (objects[i] is BoolValue boolValue)
                 {
                     boolValue.initialValue = boolValue.defaultValue;
+                } else if (objects[i] is Inventory itemValue)
+                {
+                    itemValue.numberOfKeys = 0;
                 }
 
                 Debug.Log($"File objekPlayer{i}.json dihapus dan initialValue diatur ke defaultValue");
