@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ff85b16885ac524bbcd916b12cc9f5b, type: 3}
   m_Name: key
   m_EditorClassIdentifier: 
-  itemSprite: {fileID: 21300000, guid: 1e2d23bfa1e0933489b1af05304f102e, type: 3}
-  itemDescription: it's a small key. Is there a door nearby?
+  itemSprite: {fileID: 21300000, guid: 23f124447e6ffbf4283a8b82211a4024, type: 3}
+  itemDescription: Gunakan lembaran ini untuk membuka penghalang
   isKey: 1
