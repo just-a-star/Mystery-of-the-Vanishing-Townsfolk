@@ -7,8 +7,6 @@ public class LogShooter : Enemy
 {
     [Header("Target Enemy")]
     public Transform target;
-    public float chaseRadius;
-    public float attackRadius;
 
     [Header("Posisi Awal")]
     public Transform homePosition;
