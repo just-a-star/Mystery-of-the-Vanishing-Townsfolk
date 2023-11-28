@@ -102,7 +102,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    void MakeLoot()
+    public void MakeLoot()
     {
         if (lutingan != null)
         {
@@ -114,14 +114,14 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void Die()
+    public virtual void Die()
     {
         DeathEffect();
         MakeLoot();
         Destroy(gameObject);
     }
 
-    void DeathEffect()
+    public void DeathEffect()
     {
         if(deathEffect != null)
         {
