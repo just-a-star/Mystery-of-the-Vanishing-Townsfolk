@@ -61950,6 +61950,10 @@ PrefabInstance:
       value: Treasure Chest
       objectReference: {fileID: 0}
     - target: {fileID: 6221505613050598337, guid: 92ad169df33c8454fbf32cdb4cb6f9ad, type: 3}
+      propertyPath: Kebuka
+      value: 
+      objectReference: {fileID: 11400000, guid: db7e29fc88f17e84fa310e6fac063628, type: 2}
+    - target: {fileID: 6221505613050598337, guid: 92ad169df33c8454fbf32cdb4cb6f9ad, type: 3}
       propertyPath: context
       value: 
       objectReference: {fileID: 1340339947}
