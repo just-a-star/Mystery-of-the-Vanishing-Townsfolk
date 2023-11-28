@@ -15,8 +15,13 @@ GameObject:
   - component: {fileID: 4031490302972629820}
   - component: {fileID: 6068539481330283303}
   - component: {fileID: 6383849573044916480}
+<<<<<<< Updated upstream
   - component: {fileID: 277050273757412470}
   m_Layer: 6
+=======
+  - component: {fileID: 9099136957380162302}
+  m_Layer: 7
+>>>>>>> Stashed changes
   m_Name: Genderuwo
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -207,24 +212,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bd2d96f1cb92bf429c79def064d263f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentState: 1
+  currentState: 2
   health: 15
+<<<<<<< Updated upstream
   holder: {fileID: 0}
   healthUI: {fileID: 0}
   moveSpeed: 2.53
+=======
+  enemyName: Genderuwo
+  baseAttack: 1
+  moveSpeed: 1.76
+>>>>>>> Stashed changes
   deathEffect: {fileID: 0}
   lutingan: {fileID: 11400000, guid: 51fb81afbe3856242907e5daba20291a, type: 2}
   flashLength: 0
   enemySprite: {fileID: 0}
   target: {fileID: 0}
   chaseRadius: 62.4
-  attackRadius: 5.73
-  homePosition: {fileID: 0}
+  attackRadius: 10
   animator: {fileID: 7354780631286998534}
+<<<<<<< Updated upstream
   jumpHeight: 15
   jumpDuration: 0.5
   jumpCooldown: 5
 --- !u!114 &277050273757412470
+=======
+  bulletPrefab: {fileID: 1909222423648383397, guid: 2edfda163aea50946a89dfe7a83d8392, type: 3}
+  bulletSpawnPoint: {fileID: 514657488163330450}
+  bulletSpeed: 5
+--- !u!114 &9099136957380162302
+>>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

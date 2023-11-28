@@ -29,6 +29,7 @@ public class Enemy : MonoBehaviour
     public GameObject deathEffect;
     public LootItem lutingan;
 
+<<<<<<< Updated upstream
     [Header("flash")]
     bool flashActive;
     [SerializeField] float flashLength = 0f;
@@ -80,6 +81,8 @@ public class Enemy : MonoBehaviour
             }
             flashCounter -= Time.deltaTime;
         }
+=======
+>>>>>>> Stashed changes
 
     }
     void TakeDamage(float damage)
@@ -131,6 +134,11 @@ public class Enemy : MonoBehaviour
     }
 
 
+<<<<<<< Updated upstream
+=======
+
+
+>>>>>>> Stashed changes
     public void RemoveEnemy()
     {
         Destroy(gameObject);
