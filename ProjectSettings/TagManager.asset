@@ -54,9 +54,6 @@ TagManager:
   - name: Breakable
     uniqueID: 4225646537
     locked: 0
-  - name: Projectile
-    uniqueID: 3532432551
-    locked: 0
   - name: Player
     uniqueID: 491183441
     locked: 0
