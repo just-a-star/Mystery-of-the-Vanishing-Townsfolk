@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class MainCerita : MonoBehaviour
 {
     
-    void OnEnable()
+    void OnDisable()
     {
         SceneManager.LoadScene("Intro", LoadSceneMode.Single);
     }

@@ -989,7 +989,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764882260a68c1f428f8c7af71b8879a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NewGame: OpeningCutScene
+  NewGame: MainStory
   LoadGame: {fileID: 11400000, guid: 1809ab58a8e65f04ca6f6c42102f3fa3, type: 2}
   notif: {fileID: 262661561}
   waktuNotif: 2.5

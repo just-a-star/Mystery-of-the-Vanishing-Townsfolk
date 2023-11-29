@@ -479,6 +479,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lose: 0
   losePanel: {fileID: 8811367617261951508}
+  tombol: {fileID: 825743708938125147}
   mainMenu: StartMenu
 --- !u!1 &1548328615858948835
 GameObject:
@@ -691,7 +692,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Dialog
+  m_Text: Sungguh mimpi yang buruk, semoga tidak terjadi apa-apa.
 --- !u!1 &3425999161136756690
 GameObject:
   m_ObjectHideFlags: 0
@@ -1397,7 +1398,6 @@ GameObject:
   - component: {fileID: 827816866637328854}
   - component: {fileID: 8203773018476195401}
   - component: {fileID: 2656337445518983577}
-  - component: {fileID: 8589302258522736016}
   m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
@@ -1492,21 +1492,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &8589302258522736016
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9120207065016153088}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f187b94e44d27c4fb862310ae67f978, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pausePanel: {fileID: 8958518556372341994}
-  losePanel: {fileID: 1548328615858948835}
-  mainMenu: StartMenu
 --- !u!1001 &7773960448691832680
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1665,14 +1650,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75e777cf236792a48bc227beec66cafe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPaused: 0
   pausePanel: {fileID: 5633411287958684165}
+  res: {fileID: 5608194478349369316}
   mainMenu: StartMenu
 --- !u!114 &5608194478349369316 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2753644396101810316, guid: b2573233612200f4ba855a84bad45690, type: 3}
   m_PrefabInstance: {fileID: 7773960448691832680}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8958518556372341994}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
@@ -1686,10 +1673,5 @@ RectTransform:
 --- !u!1 &5633411287958684165 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2724469344733136237, guid: b2573233612200f4ba855a84bad45690, type: 3}
-  m_PrefabInstance: {fileID: 7773960448691832680}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &8958518556372341994 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1707333744473871234, guid: b2573233612200f4ba855a84bad45690, type: 3}
   m_PrefabInstance: {fileID: 7773960448691832680}
   m_PrefabAsset: {fileID: 0}

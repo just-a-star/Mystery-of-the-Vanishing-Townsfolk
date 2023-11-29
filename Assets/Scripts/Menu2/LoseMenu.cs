@@ -10,6 +10,7 @@ public class LoseMenu : MonoBehaviour
     public static LoseMenu singleton;
     public bool lose;
     public GameObject losePanel;
+    public Button tombol;
     public string mainMenu;
 
 
@@ -23,7 +24,7 @@ public class LoseMenu : MonoBehaviour
     {
         lose = true;
         losePanel.SetActive(true);
-        UIManager.singleton.SetFocusToLosePanel();
+        tombol.Select();
             
             Time.timeScale = 0f;
         

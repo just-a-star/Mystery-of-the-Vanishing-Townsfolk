@@ -7,10 +7,18 @@ using UnityEngine.UI;
 
 public class PauseManager : MonoBehaviour
 {
-    bool isPaused;
+    public static PauseManager singleton;
+
+    public bool isPaused;
     public GameObject pausePanel;
+    public Button res;
     public string mainMenu;
-    
+
+
+    private void Awake()
+    {
+        singleton = this;
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -22,8 +30,8 @@ public class PauseManager : MonoBehaviour
     {
         if (Input.GetButtonDown("pause") && !LoseMenu.singleton.lose)
         {
-            UIManager.singleton.SetFocusToPausePanel();
             ChangesPause();
+            /*UIManager.singleton.SetFocusToPausePanel();*/
         }
     }
 
@@ -34,6 +42,9 @@ public class PauseManager : MonoBehaviour
         {
             pausePanel.SetActive(true);
             Time.timeScale = 0f;
+
+            res.Select();
+            
         }
         else
         {

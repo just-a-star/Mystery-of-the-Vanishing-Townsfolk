@@ -1,0 +1,48 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.Video;
+
+public class VideoController : MonoBehaviour
+{
+    public VideoPlayer videoPlayer;
+    bool isPaused = false;
+    double pausedTime;
+
+    void Start()
+    {
+        videoPlayer.loopPointReached += OnVideoEnd;
+    }
+
+    private void Update()
+    {
+        // Menyimpan status pause game
+        isPaused = Time.timeScale == 0f;
+
+        // Menjalankan video jika game tidak di-pause
+        if (!isPaused)
+        {
+            videoPlayer.Play();
+        }
+        else
+        {
+            videoPlayer.Pause();
+        }
+
+        // Menjalankan aksi ketika "Submit" ditekan dan game di-pause
+        if (Input.GetButtonDown("Submit") && isPaused)
+        {
+            SceneManager.LoadScene("OpeningCutScene");
+        }
+    }
+
+    void OnVideoEnd(VideoPlayer vp)
+    {
+        Debug.Log("Video Selesai");
+        // Tambahkan aksi yang diinginkan setelah video selesai
+        // Contoh: Pindah ke scene lain
+        SceneManager.LoadScene("OpeningCutScene");
+    }
+
+}
