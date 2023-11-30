@@ -11,7 +11,7 @@ public class skipStory : MonoBehaviour
     private void Update()
     
     {
-        if (Input.GetButtonDown("Submit") || Input.GetButtonDown("pause"))
+        if (Input.GetButtonDown("interact") && !PauseManager.singleton.pausePanel.activeSelf)
         {
                 SceneManager.LoadScene(LoadKe);
             

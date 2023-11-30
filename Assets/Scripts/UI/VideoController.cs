@@ -30,11 +30,7 @@ public class VideoController : MonoBehaviour
             videoPlayer.Pause();
         }
 
-        // Menjalankan aksi ketika "Submit" ditekan dan game di-pause
-        if (Input.GetButtonDown("Submit") && isPaused)
-        {
-            SceneManager.LoadScene("OpeningCutScene");
-        }
+        
     }
 
     void OnVideoEnd(VideoPlayer vp)
