@@ -69,21 +69,28 @@ public class SaveData : MonoBehaviour
         {
             string filePath = Application.persistentDataPath + $"/objekPlayer{i}.json";
 
+            if (objects[i] is FloatValue floatValue)
+            {
+                Debug.Log($"Before Reset - floatValue.initialValue: {floatValue.initialValue}, floatValue.defaultValue: {floatValue.defaultValue}");
+
+                floatValue.initialValue = floatValue.defaultValue;
+
+                Debug.Log($"After Reset - floatValue.initialValue: {floatValue.initialValue}, floatValue.defaultValue: {floatValue.defaultValue}");
+            }
+            else if (objects[i] is BoolValue boolValue)
+            {
+                boolValue.initialValue = boolValue.defaultValue;
+            }
+            else if (objects[i] is Inventory itemValue)
+            {
+                itemValue.numberOfKeys = 0;
+            }
+
             if (File.Exists(filePath))
             {
                 File.Delete(filePath);
 
-                if (objects[i] is FloatValue floatValue)
-                {
-                    floatValue.initialValue = floatValue.defaultValue;
-                }
-                else if (objects[i] is BoolValue boolValue)
-                {
-                    boolValue.initialValue = boolValue.defaultValue;
-                } else if (objects[i] is Inventory itemValue)
-                {
-                    itemValue.numberOfKeys = 0;
-                }
+                
 
                 Debug.Log($"File objekPlayer{i}.json dihapus dan initialValue diatur ke defaultValue");
             }

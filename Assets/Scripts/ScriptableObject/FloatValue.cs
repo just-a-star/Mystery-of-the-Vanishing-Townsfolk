@@ -9,9 +9,5 @@ public class FloatValue : ScriptableObject
     public float initialValue;
     public float defaultValue;
 
-    private void OnEnable()
-    {
-        initialValue = defaultValue;
-    }
 
 }

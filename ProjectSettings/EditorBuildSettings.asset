@@ -9,6 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/StartMenu.unity
     guid: 3fad5b2d4f28519499aeed6807669f2d
   - enabled: 1
+    path: Assets/Scenes/MainStory.unity
+    guid: 9313403b6ef556d48a268514d00605d2
+  - enabled: 1
+    path: Assets/Scenes/Intro.unity
+    guid: 8293ce947b0e20840ac25f715eedc45b
+  - enabled: 1
     path: Assets/Scenes/OpeningCutScene.unity
     guid: 67c80f356d0acf3449fdee8f089a139c
   - enabled: 1
@@ -29,10 +35,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Hell.unity
     guid: 0d79d27fdbfd08f47a7d417c761b8833
-  - enabled: 1
-    path: Assets/Scenes/MainStory.unity
-    guid: 9313403b6ef556d48a268514d00605d2
-  - enabled: 1
-    path: Assets/Scenes/Intro.unity
-    guid: 8293ce947b0e20840ac25f715eedc45b
   m_configObjects: {}
