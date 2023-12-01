@@ -52,7 +52,7 @@ public class Genderuwo : Enemy
         {
             SetMovement(Vector2.zero);
             PerformAttack();
-            AudioManager.singleton.PlaySound(6);
+           
 
         }
         else
