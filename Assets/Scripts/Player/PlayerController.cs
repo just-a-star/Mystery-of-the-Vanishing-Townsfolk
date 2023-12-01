@@ -81,7 +81,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetButtonDown("attack") && state != PlayerState.attack && state != PlayerState.stun && state != PlayerState.interact)
         {
-            AudioManager.singleton.PlaySound(0);
+            AudioManager.singleton.PlaySound(2);
             StartCoroutine(AttackCo());
             
 
@@ -89,6 +89,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (Input.GetButtonDown("Nembak") && state != PlayerState.attack && state != PlayerState.stun && state !=PlayerState.interact && mana.initialValue > 0)
         {
+            AudioManager.singleton.PlaySound(4);
             StartCoroutine(SecondAttackCo());
         }
         else if (!isDashing)
@@ -96,11 +97,13 @@ public class PlayerController : MonoBehaviour
            
             if (Input.GetButtonDown("dash") && Time.time - lastDashTime > dashCooldown && state != PlayerState.dash && state != PlayerState.interact)
             {
+                AudioManager.singleton.PlaySound(1);
                 Debug.Log("Dash key pressed");
                 StartDash();
             }
             else if(state == PlayerState.walk || state == PlayerState.idle)
             {
+
                 animasi();
             }
         }

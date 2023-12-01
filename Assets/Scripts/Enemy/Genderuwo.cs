@@ -50,6 +50,7 @@ public class Genderuwo : Enemy
         }
         else if (distanceToTarget <= attackRadius && currentState != EnemyState.attack)
         {
+            AudioManager.singleton.PlaySound(6);
             SetMovement(Vector2.zero);
             PerformAttack();
             
