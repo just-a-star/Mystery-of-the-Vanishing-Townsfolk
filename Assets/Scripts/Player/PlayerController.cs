@@ -81,8 +81,10 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetButtonDown("attack") && state != PlayerState.attack && state != PlayerState.stun && state != PlayerState.interact)
         {
+            AudioManager.singleton.PlaySound(0);
             StartCoroutine(AttackCo());
             
+
             /*playerAttack.Attack();*/
         }
         else if (Input.GetButtonDown("Nembak") && state != PlayerState.attack && state != PlayerState.stun && state !=PlayerState.interact && mana.initialValue > 0)
@@ -112,7 +114,6 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("attacking", false);
         yield return new WaitForSeconds(.3f);
         state = PlayerState.walk;
-        AudioManager.singleton.PlaySound(2);
     }
     
     IEnumerator DamagedCo()
