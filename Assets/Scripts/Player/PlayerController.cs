@@ -251,6 +251,7 @@ public class PlayerController : MonoBehaviour
     {
         if (darah.initialValue > 0 )
         {
+            AudioManager.singleton.PlaySound(8);
             StartCoroutine(KnockCo(knockTime));
             StartCoroutine(DamagedCo());
         } 
