@@ -30,13 +30,13 @@ public class LogShooter : Enemy
     private void Update()
     {
         
-        CheckDistance();
         fireDelaySeconds -= Time.deltaTime;
         if (fireDelaySeconds <= 0)
         {
             canFire = true;
             fireDelaySeconds = fireDelay;
         }
+        CheckDistance();
     }
 
     public void CheckDistance()
