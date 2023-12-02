@@ -69,7 +69,7 @@ public class Pocong : Enemy
         }
         else if (distanceToTarget <= attackRadius)
         {
-            PerformAttack();
+            //PerformAttack();
         }
         else
         {
