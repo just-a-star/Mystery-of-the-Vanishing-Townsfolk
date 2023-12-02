@@ -107,6 +107,7 @@ public class PlayerController : MonoBehaviour
             {
 
                 animasi();
+
             }
         }
     }
@@ -146,7 +147,7 @@ public class PlayerController : MonoBehaviour
     void MakeTembak()
     {
         
-            Vector2 temp = new Vector2(animator.GetFloat("moveX"), animator.GetFloat("moveY"));
+        Vector2 temp = new Vector2(animator.GetFloat("moveX"), animator.GetFloat("moveY"));
         MagicProjectile sihir = Instantiate(magicShot, transform.position, Quaternion.identity).GetComponent<MagicProjectile>();
         sihir.gerak(temp, ArahTembakan());
         MagicManager.singleton.DecreaseMagic();
@@ -177,12 +178,14 @@ public class PlayerController : MonoBehaviour
     {
         if(moveSpeed != Vector2.zero)
         {
+            
             move();
             moveSpeed.x = Mathf.Round(moveSpeed.x);
             moveSpeed.y = Mathf.Round(moveSpeed.y);
             animator.SetFloat("moveX", moveSpeed.x);
             animator.SetFloat("moveY", moveSpeed.y);
             animator.SetBool("moving", true);
+
         } else
         {
             animator.SetBool("moving", false);

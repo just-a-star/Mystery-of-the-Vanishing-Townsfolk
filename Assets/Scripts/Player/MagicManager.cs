@@ -28,6 +28,7 @@ public class MagicManager : MonoBehaviour
 
         if(pMana.initialValue < pMana.defaultValue)
         {
+            AudioManager.singleton.PlaySound(0);
             pMana.initialValue += 1;
             UpdateMagicUI();
         }

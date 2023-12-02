@@ -36,9 +36,12 @@ public class PlayerHealth : MonoBehaviour
 
         if(pHealth.initialValue <= 0 )
         {
+            
             pHealth.initialValue = 0;
             player.SetActive(false);
             LoseMenu.singleton.kalah();
+            AudioManager.singleton.PlaySound(9);
+
         }
 
             UpdateHealthUI();
@@ -51,6 +54,7 @@ public class PlayerHealth : MonoBehaviour
         {
             pHealth.initialValue += 1;
             UpdateHealthUI();
+            AudioManager.singleton.PlaySound(0);
         }
     }
 
