@@ -52,7 +52,6 @@ public class Genderuwo : Enemy
         {
             SetMovement(Vector2.zero);
             PerformAttack();
-           
 
         }
         else
@@ -99,7 +98,7 @@ public class Genderuwo : Enemy
         ShootBullet();
         shotCounter = Random.Range(3f, 5f); // Reset the shot counter
         currentState = EnemyState.idle; // Reset the state to allow movement again
-    }
+        }
     }
 
     void ShootBullet()

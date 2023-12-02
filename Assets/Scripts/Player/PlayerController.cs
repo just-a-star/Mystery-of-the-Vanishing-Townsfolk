@@ -105,6 +105,7 @@ public class PlayerController : MonoBehaviour
             {
 
                 animasi();
+
             }
         }
     }
@@ -175,12 +176,14 @@ public class PlayerController : MonoBehaviour
     {
         if(moveSpeed != Vector2.zero)
         {
+            AudioManager.singleton.PlaySound(16);
             move();
             moveSpeed.x = Mathf.Round(moveSpeed.x);
             moveSpeed.y = Mathf.Round(moveSpeed.y);
             animator.SetFloat("moveX", moveSpeed.x);
             animator.SetFloat("moveY", moveSpeed.y);
             animator.SetBool("moving", true);
+
         } else
         {
             animator.SetBool("moving", false);
