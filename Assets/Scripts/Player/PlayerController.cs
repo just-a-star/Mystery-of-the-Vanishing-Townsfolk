@@ -76,7 +76,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
         inputJalan();
 
         if (Input.GetButtonDown("attack") && state != PlayerState.attack && state != PlayerState.stun && state != PlayerState.interact)
@@ -98,6 +98,8 @@ public class PlayerController : MonoBehaviour
             if (Input.GetButtonDown("dash") && Time.time - lastDashTime > dashCooldown && state != PlayerState.dash && state != PlayerState.interact)
             {
                 AudioManager.singleton.PlaySound(1);
+
+
                 Debug.Log("Dash key pressed");
                 StartDash();
             }
@@ -122,7 +124,7 @@ public class PlayerController : MonoBehaviour
     IEnumerator DamagedCo()
     {
         animator.SetTrigger("kenaSerang");
-        state = PlayerState.stun;
+        
         yield return null;
         /*animator.SetBool("damaged", false);*/
         yield return new WaitForSeconds(.3f);
@@ -192,10 +194,6 @@ public class PlayerController : MonoBehaviour
         rb.MovePosition(rb.position + moveSpeed.normalized * speed * Time.fixedDeltaTime);
     }
 
-   /* public void Knock(float knockTime)
-    {
-        StartCoroutine(KnockCo(knockTime));
-    }*/
 
     // Dash abilty
     void StartDash()
@@ -244,25 +242,51 @@ public class PlayerController : MonoBehaviour
         rb.velocity = Vector2.zero;
     }
 
+    // Add a coroutine for the stun effect
+    public void StunPlayer(float stunDuration)
+    {
+        if (state != PlayerState.stun)
+        {
+            Debug.Log("Player Stunned!");
+            animator.SetTrigger("kenaSerang");
+            StartCoroutine(StunPlayerCo(stunDuration));
+        }
+    }
+
+    private IEnumerator StunPlayerCo(float stunDuration)
+    {
+        Debug.Log("Player Stunned!");
+        state = PlayerState.stun;
+        yield return new WaitForSeconds(stunDuration);
+        state = PlayerState.idle; // Or return to walk state if that's more appropriate
+    }
+
     public void Knock(float knockTime)
     {
-        if (darah.initialValue > 0 )
+        // Check if the player is currently stunned
+        if (state != PlayerState.stun && darah.initialValue > 0)
         {
             StartCoroutine(KnockCo(knockTime));
             StartCoroutine(DamagedCo());
-        } 
+        }
     }
 
     private IEnumerator KnockCo(float knockTime)
     {
-        if (rb != null)
+        if (rb != null && state != PlayerState.stun)
         {
+            Debug.Log("Player Knocked Back!");
+            state = PlayerState.idle; // Assuming you set the player to idle when knocked back
+            rb.velocity = Vector2.zero; // Apply the knockback effect here if needed
+
             yield return new WaitForSeconds(knockTime);
-            rb.velocity = Vector2.zero;
+
             state = PlayerState.idle;
             rb.velocity = Vector2.zero;
+            Debug.Log("Player Left Knocked Back State!");
         }
     }
+
 
     public void RaiseItem()
     {

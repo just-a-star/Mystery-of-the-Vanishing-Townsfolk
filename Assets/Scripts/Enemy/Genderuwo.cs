@@ -15,6 +15,9 @@ public class Genderuwo : Enemy
     private Vector2 movement;
     private float timeBetweenShots;
     private float shotCounter;
+    public float meleeAttackRadius;
+
+
 
     void Start()
     {
@@ -41,29 +44,57 @@ public class Genderuwo : Enemy
     void CheckDistance()
     {
         float distanceToTarget = Vector3.Distance(target.position, transform.position);
-        if (distanceToTarget <= chaseRadius && distanceToTarget > attackRadius)
+
+        if (distanceToTarget > attackRadius) // Outside attack radius, move towards player
         {
-            if (currentState == EnemyState.idle || currentState == EnemyState.walk)
+            Vector2 direction = (target.position - transform.position).normalized;
+            SetMovement(direction);
+        }
+        else if (distanceToTarget > meleeAttackRadius) // Within ranged attack radius, but outside melee attack radius
+        {
+            if (currentState != EnemyState.attack)
             {
-                SetMovement(target.position - transform.position);
+                SetMovement(Vector2.zero); // Stop moving when attacking
+                PerformRangedAttack();
             }
         }
-        else if (distanceToTarget <= attackRadius && currentState != EnemyState.attack)
+        else // Within melee attack radius
         {
-            SetMovement(Vector2.zero);
-            PerformAttack();
-           
-
+            if (currentState != EnemyState.attack)
+            {
+                SetMovement(Vector2.zero); // Stop moving when attacking
+                PerformMeleeAttack();
+            }
         }
-        else
+    }
+
+    void PerformMeleeAttack()
+    {
+        animator.SetTrigger("Attack"); // Ensure you have a MeleeAttack trigger in your Animator
+                                            // Melee attack logic here
+                                            // For example, apply damage directly to the player if they are within melee range
+        TransitionToMoveState();
+    }
+    void PerformRangedAttack()
+    {
+        animator.SetTrigger("RangedAttack"); // Ensure you have a RangedAttack trigger in your Animator
+        shotCounter -= Time.deltaTime;
+        if (shotCounter <= 0)
         {
-            SetMovement(Vector2.zero);
+            ShootBullet();
+            shotCounter = timeBetweenShots; // Reset the shot counter
+        }
+        // Continue moving while performing ranged attack
+        if (currentState != EnemyState.walk)
+        {
+            SetMovement((target.position - transform.position).normalized);
+            currentState = EnemyState.walk;
         }
     }
 
     void SetMovement(Vector2 direction)
     {
-        movement = direction.normalized;
+        movement = direction;
         if (movement != Vector2.zero)
         {
             currentState = EnemyState.walk;
@@ -90,27 +121,66 @@ public class Genderuwo : Enemy
 
     void PerformAttack()
     {
-        currentState = EnemyState.attack;
         animator.SetTrigger("Attack");
-        // Attack logic (e.g., instantiate bullets, apply damage to the player, etc.)
         shotCounter -= Time.deltaTime;
-    if (shotCounter <= 0)
-    {
-        ShootBullet();
-        shotCounter = Random.Range(3f, 5f); // Reset the shot counter
-        currentState = EnemyState.idle; // Reset the state to allow movement again
-    }
+        if (shotCounter <= 0)
+        {
+            ShootBullet();
+            shotCounter = timeBetweenShots; // Reset the shot counter
+                                            // Transition back to walk state after shooting
+            TransitionToMoveState();
+        }
     }
 
     void ShootBullet()
     {
+        Vector2 direction = (target.position - transform.position).normalized;
         GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, Quaternion.identity);
+
         SihirGenderuwo bulletComponent = bullet.GetComponent<SihirGenderuwo>();
         if (bulletComponent != null)
         {
-            Vector2 direction = (target.position - transform.position).normalized;
-            bulletComponent.Initialize(direction);
+            bulletComponent.Initialize(direction, bulletSpeed); // Pass direction and speed
         }
     }
 
+
+    void TransitionToMoveState()
+    {
+        float distanceToTarget = Vector3.Distance(target.position, transform.position);
+        if (distanceToTarget > attackRadius)
+        {
+            SetMovement((target.position - transform.position).normalized);
+            currentState = EnemyState.walk;
+        }
+        else
+        {
+            SetMovement(Vector2.zero);
+            currentState = EnemyState.walk;
+        }
+    }
+
+
+
+
+
+
+
+
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == 3) // Assuming obstacleLayer is defined
+        {
+            // Implement logic for when Genderuwo collides with an obstacle
+            // For example, wait, change direction, etc.
+            StartCoroutine(RecoverFromCollision());
+        }
+    }
+    IEnumerator RecoverFromCollision()
+    {
+        currentState = EnemyState.idle; // Temporarily stop the enemy
+        yield return new WaitForSeconds(0.1f); // Wait for a moment
+        currentState = EnemyState.walk; // Resume following the player
+    }
 }

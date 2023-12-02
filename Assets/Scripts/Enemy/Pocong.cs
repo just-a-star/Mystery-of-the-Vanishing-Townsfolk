@@ -18,6 +18,10 @@ public class Pocong : Enemy
 
     private bool isJumping = false; // To track if Pocong is currently jumping
 
+    // jump aoe
+    public CircleCollider2D aoeCollider; // Assign this in the Inspector
+    public float aoeDuration = 0.5f; // Duration for which AoE is active after landing
+
     void Start()
     {
         currentState = EnemyState.idle;
@@ -93,23 +97,38 @@ public class Pocong : Enemy
         isJumping = true;
         Vector3 startPosition = transform.position;
         Vector3 endPosition = target.position;
-        endPosition.y = transform.position.y;
 
         float elapsedTime = 0;
         while (elapsedTime < jumpDuration)
         {
             float progress = elapsedTime / jumpDuration;
-            float verticalPosition = 4 * jumpHeight * progress * (1 - progress);
+
+            // Calculate vertical and horizontal positions separately
+            float verticalPosition = Mathf.Lerp(startPosition.y, endPosition.y, progress);
+            float parabola = 4 * jumpHeight * progress * (1 - progress);
             Vector3 horizontalPosition = Vector3.Lerp(startPosition, endPosition, progress);
-            transform.position = new Vector3(horizontalPosition.x, startPosition.y + verticalPosition, horizontalPosition.z);
+
+            // Combine them for the final position
+            transform.position = new Vector3(horizontalPosition.x, verticalPosition + parabola, horizontalPosition.z);
 
             elapsedTime += Time.deltaTime;
             yield return null;
         }
 
-        transform.position = new Vector3(endPosition.x, transform.position.y, endPosition.z);
+        // Land at the exact position of the player
+        transform.position = endPosition;
+
+        // Activate AoE collider
+        aoeCollider.enabled = true;
+        yield return new WaitForSeconds(aoeDuration);
+        aoeCollider.enabled = false;
+
         isJumping = false;
     }
+
+
+
+
 
     IEnumerator JumpRoutine()
     {
