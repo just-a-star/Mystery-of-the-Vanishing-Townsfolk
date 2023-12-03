@@ -21,6 +21,7 @@ public class MagicProjectile : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
+            Debug.Log("Collision detected with: " + collision.gameObject.name);
             Destroy(this.gameObject);
         }
     }

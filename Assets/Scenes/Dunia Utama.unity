@@ -62110,6 +62110,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: db7e29fc88f17e84fa310e6fac063628, type: 2}
     - target: {fileID: 6221505613050598337, guid: 92ad169df33c8454fbf32cdb4cb6f9ad, type: 3}
+      propertyPath: isOpen
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221505613050598337, guid: 92ad169df33c8454fbf32cdb4cb6f9ad, type: 3}
       propertyPath: context
       value: 
       objectReference: {fileID: 1340339947}
@@ -70644,6 +70648,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6572764580704817507, guid: 9c530e180a7ad8a4c83fef959b6ffdf2, type: 3}
+      propertyPath: tes
+      value: 
+      objectReference: {fileID: 11400000, guid: 03de8db2243d44d40a8b801854b74e24, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -70994,4 +71002,3 @@ SceneRoots:
   - {fileID: 1758086052}
   - {fileID: 2032677718}
   - {fileID: 4840900675405247983}
-  - {fileID: 1520762231}

@@ -12079,11 +12079,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 514657488163330450, guid: 769c3d1325242ee4eb0e70954a2a5c3d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.1705117
+      value: -6.34
       objectReference: {fileID: 0}
     - target: {fileID: 514657488163330450, guid: 769c3d1325242ee4eb0e70954a2a5c3d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -21.08156
+      value: -20.77
       objectReference: {fileID: 0}
     - target: {fileID: 514657488163330450, guid: 769c3d1325242ee4eb0e70954a2a5c3d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -12152,11 +12152,11 @@ PrefabInstance:
       objectReference: {fileID: 360003206}
     - target: {fileID: 6176531429503655821, guid: 9c530e180a7ad8a4c83fef959b6ffdf2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.57
+      value: 6.89
       objectReference: {fileID: 0}
     - target: {fileID: 6176531429503655821, guid: 9c530e180a7ad8a4c83fef959b6ffdf2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -27.31
+      value: -17.05
       objectReference: {fileID: 0}
     - target: {fileID: 6176531429503655821, guid: 9c530e180a7ad8a4c83fef959b6ffdf2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -12193,7 +12193,7 @@ PrefabInstance:
     - target: {fileID: 6572764580704817507, guid: 9c530e180a7ad8a4c83fef959b6ffdf2, type: 3}
       propertyPath: starPos
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: 729a5c879d39f834e99936add8f4d8b0, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -40388,13 +40388,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 588205085449781308, guid: 83429c7481900a345989b04f76860ae3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1497620797573415799, guid: 83429c7481900a345989b04f76860ae3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.4620285
+      value: 1.6
       objectReference: {fileID: 0}
     - target: {fileID: 1497620797573415799, guid: 83429c7481900a345989b04f76860ae3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -20.526276
+      value: -20.46
       objectReference: {fileID: 0}
     - target: {fileID: 1497620797573415799, guid: 83429c7481900a345989b04f76860ae3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -40428,10 +40432,38 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2339488799823004320, guid: 83429c7481900a345989b04f76860ae3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2339488799823004320, guid: 83429c7481900a345989b04f76860ae3, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4598052710056486782, guid: 83429c7481900a345989b04f76860ae3, type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4598052710056486782, guid: 83429c7481900a345989b04f76860ae3, type: 3}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4928480009573392580, guid: 83429c7481900a345989b04f76860ae3, type: 3}
+      propertyPath: health
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 4928480009573392580, guid: 83429c7481900a345989b04f76860ae3, type: 3}
       propertyPath: target
       value: 
       objectReference: {fileID: 880347284}
+    - target: {fileID: 5454222226157367874, guid: 83429c7481900a345989b04f76860ae3, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -7.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5454222226157367874, guid: 83429c7481900a345989b04f76860ae3, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 11.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8814452403965221133, guid: 83429c7481900a345989b04f76860ae3, type: 3}
       propertyPath: m_Name
       value: Pocong
@@ -54310,6 +54342,10 @@ PrefabInstance:
       propertyPath: homePosition
       value: 
       objectReference: {fileID: 1601008375}
+    - target: {fileID: 8236938802420793604, guid: d8234a00fcf58534d98977283126259b, type: 3}
+      propertyPath: dorongan
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -54325,11 +54361,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5161605506529816911, guid: fb03eed0631561c4f8e0c0c028f272e5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.830436
+      value: 8.21
       objectReference: {fileID: 0}
     - target: {fileID: 5161605506529816911, guid: fb03eed0631561c4f8e0c0c028f272e5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -20.571918
+      value: -25.03
       objectReference: {fileID: 0}
     - target: {fileID: 5161605506529816911, guid: fb03eed0631561c4f8e0c0c028f272e5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -54440,6 +54476,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1658028121}
     m_Modifications:
+    - target: {fileID: 1786995108889634564, guid: 3996b2680bffc394cb38d1145aa6ba52, type: 3}
+      propertyPath: dorongan
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3734902267659237983, guid: 3996b2680bffc394cb38d1145aa6ba52, type: 3}
       propertyPath: health
       value: 5
@@ -54466,7 +54506,7 @@ PrefabInstance:
       objectReference: {fileID: 549374270}
     - target: {fileID: 6926380997670925324, guid: 3996b2680bffc394cb38d1145aa6ba52, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.624113
+      value: -10.54
       objectReference: {fileID: 0}
     - target: {fileID: 6926380997670925324, guid: 3996b2680bffc394cb38d1145aa6ba52, type: 3}
       propertyPath: m_LocalPosition.y
