@@ -266,9 +266,11 @@ public class PlayerController : MonoBehaviour
 
     public void Knock(float knockTime)
     {
+        Debug.Log("huaaaa");
         // Check if the player is currently stunned
-        if (state != PlayerState.stun && darah.initialValue > 0)
+        if (state == PlayerState.stun && darah.initialValue > 0)
         {
+            Debug.Log("halo");
             AudioManager.singleton.PlaySound(8);
             StartCoroutine(KnockCo(knockTime));
             StartCoroutine(DamagedCo());

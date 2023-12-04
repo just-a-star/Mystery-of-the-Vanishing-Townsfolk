@@ -22,6 +22,11 @@ public class Pocong : Enemy
     public CircleCollider2D aoeCollider; // Assign this in the Inspector
     public float aoeDuration = 0.5f; // Duration for which AoE is active after landing
 
+
+    public Collider2D boundary;
+
+    public float stateAwal;
+
     void Start()
     {
         currentState = EnemyState.idle;
@@ -29,7 +34,6 @@ public class Pocong : Enemy
         target = GameObject.FindWithTag("Player").transform;
         myRigidbody.freezeRotation = true;
 
-        StartCoroutine(JumpRoutine());
     }
 
     void FixedUpdate()
@@ -54,8 +58,9 @@ public class Pocong : Enemy
     void CheckDistance()
     {
         float distanceToTarget = Vector3.Distance(target.position, transform.position);
-        if (distanceToTarget <= chaseRadius && distanceToTarget > attackRadius)
+        if (boundary.OverlapPoint(target.transform.position))
         {
+            stateAwal -= Time.deltaTime;
             if (currentState == EnemyState.idle || currentState == EnemyState.walk && currentState != EnemyState.stagger)
             {
                 Vector3 temp = Vector3.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
@@ -65,7 +70,10 @@ public class Pocong : Enemy
                 animator.SetFloat("Horizontal", movement.x);
                 animator.SetFloat("Vertical", movement.y);
                 animator.SetFloat("Speed", movement.sqrMagnitude);
-            }
+                StartCoroutine(JumpRoutine());
+
+                
+            } 
         }
         else if (distanceToTarget <= attackRadius)
         {
@@ -135,9 +143,10 @@ public class Pocong : Enemy
         while (true)
         {
             yield return new WaitForSeconds(jumpCooldown);
-            if (!isJumping)
+            if (stateAwal  <= jumpCooldown)
             {
                 StartCoroutine(PerformJump());
+                stateAwal = 10f;
             }
         }
     }

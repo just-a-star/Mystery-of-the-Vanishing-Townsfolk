@@ -58,11 +58,14 @@ public class Hit : MonoBehaviour
                 }
 
                 if (collision.gameObject.CompareTag("Player") && collision.isTrigger)
-                {
+                {;
                     hit.AddForce(difference, ForceMode2D.Impulse);
+                    Debug.Log(difference);
                     PlayerHealth.singleton.TakeDamage(damage);
                     hit.GetComponent<PlayerController>().state = PlayerState.stun;
+                    Debug.Log("sekarang" + hit.GetComponent<PlayerController>().state);
                     collision.GetComponent<PlayerController>().Knock(knockTime);
+                    Debug.Log("baru" + hit.GetComponent<PlayerController>().state);
                 }
             }
 
