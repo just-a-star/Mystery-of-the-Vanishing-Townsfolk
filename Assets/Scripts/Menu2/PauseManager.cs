@@ -12,6 +12,7 @@ public class PauseManager : MonoBehaviour
     public bool isPaused;
     public GameObject pausePanel;
     public Button resumeButton;
+    public Button optionButton;
     public Button quitButton;
     public string mainMenu;
 
@@ -47,6 +48,10 @@ public class PauseManager : MonoBehaviour
                 // Panggil fungsi atau lakukan tindakan yang diinginkan untuk resume
                 ResumeGame();
             }
+            else if(selectedObject != null && selectedObject.GetComponent<Button>() == optionButton)
+            {
+                OptionGame();
+            }
             else if (selectedObject != null && selectedObject.GetComponent<Button>() == quitButton)
             {
                 // Panggil fungsi atau lakukan tindakan yang diinginkan untuk keluar ke menu utama
@@ -70,6 +75,11 @@ public class PauseManager : MonoBehaviour
             pausePanel.SetActive(false);
             Time.timeScale = 1f;
         }
+    }
+
+    public void OptionGame()
+    {
+
     }
 
     public void ResumeGame()
