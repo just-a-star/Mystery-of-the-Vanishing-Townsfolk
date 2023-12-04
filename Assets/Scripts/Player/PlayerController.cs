@@ -266,12 +266,9 @@ public class PlayerController : MonoBehaviour
 
     public void Knock(float knockTime)
     {
-        Debug.Log("huaaaa");
         // Check if the player is currently stunned
-        if (state == PlayerState.stun && darah.initialValue > 0)
+        if (darah.initialValue > 0)
         {
-            Debug.Log("halo");
-            AudioManager.singleton.PlaySound(8);
             StartCoroutine(KnockCo(knockTime));
             StartCoroutine(DamagedCo());
         }
@@ -279,17 +276,12 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator KnockCo(float knockTime)
     {
-        if (rb != null && state != PlayerState.stun)
+        if (rb != null)
         {
-            Debug.Log("Player Knocked Back!");
-            state = PlayerState.idle; // Assuming you set the player to idle when knocked back
-            rb.velocity = Vector2.zero; // Apply the knockback effect here if needed
-
             yield return new WaitForSeconds(knockTime);
-
+            rb.velocity = Vector2.zero;
             state = PlayerState.idle;
             rb.velocity = Vector2.zero;
-            Debug.Log("Player Left Knocked Back State!");
         }
     }
 

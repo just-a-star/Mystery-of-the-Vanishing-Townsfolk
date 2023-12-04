@@ -178,6 +178,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91232fc1089c8e846b89e753c29be248, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dorongan: 10
-  knockTime: 0
+  dorongan: 2
+  knockTime: 0.5
   damage: 1

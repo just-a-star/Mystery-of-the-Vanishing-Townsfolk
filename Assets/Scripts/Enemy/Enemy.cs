@@ -86,6 +86,7 @@ public class Enemy : MonoBehaviour
     {
         Debug.Log("TakeDamage called. Current state: " + currentState);
         holder.SetActive(true);
+        Debug.Log(holder.activeSelf);
         if( health > 0 ) {
         health -= damage;
             float fillAmount = health / maxHealth;

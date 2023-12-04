@@ -48,11 +48,11 @@ TagManager:
   - name: Bangunan
     uniqueID: 1707716619
     locked: 0
-  - name: Enemy
-    uniqueID: 597007697
-    locked: 0
   - name: Breakable
     uniqueID: 4225646537
+    locked: 0
+  - name: Enemy
+    uniqueID: 597007697
     locked: 0
   - name: Projectile
     uniqueID: 3532432551

@@ -27,6 +27,7 @@ public class PindahScene : MonoBehaviour
     {
         fade.FadeIn();
         yield return new WaitForSeconds(1);
+        playerStorage.initialValue = playerPosition;
         SceneManager.LoadScene(sceneToLoad);
     }
 
@@ -43,7 +44,6 @@ public class PindahScene : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            playerStorage.initialValue = playerPosition;
             playerInRange = true;
         }
     }

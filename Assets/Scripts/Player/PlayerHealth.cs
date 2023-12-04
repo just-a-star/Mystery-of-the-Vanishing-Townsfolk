@@ -33,8 +33,9 @@ public class PlayerHealth : MonoBehaviour
     public void TakeDamage(float damage)
     {
         pHealth.initialValue -= damage;
+        AudioManager.singleton.PlaySound(8);
 
-        if(pHealth.initialValue <= 0 )
+        if (pHealth.initialValue <= 0 )
         {
             
             pHealth.initialValue = 0;

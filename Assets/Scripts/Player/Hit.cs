@@ -29,11 +29,9 @@ public class Hit : MonoBehaviour
             dps -= Time.deltaTime;
             if( dps <= 0 )
             {
-                Debug.Log(isTouching);
                 PlayerHealth.singleton.TakeDamage(damage);
                 dps = 1f;
 
-                Debug.Log(dps);
             }
         }
     }
@@ -46,28 +44,33 @@ public class Hit : MonoBehaviour
 
             if (hit != null)
             {
-                Vector2 difference = hit.transform.position - transform.position;
-                difference = difference.normalized * dorongan;
                 
+                    Vector2 difference = hit.transform.position - transform.position;
+                    difference = difference.normalized * dorongan;
+
+                Vector2 raycastOrigin = new Vector2(transform.position.x, transform.position.y);
+
+
+                RaycastHit2D dinding = Physics2D.Raycast(raycastOrigin, difference, 0, LayerMask.GetMask("Obstacle"));
+
+                    hit.AddForce(difference, ForceMode2D.Impulse);
+                
+
 
                 if (collision.gameObject.CompareTag("Enemy") && collision.isTrigger)
                 {
-                    hit.AddForce(difference, ForceMode2D.Impulse);
                     hit.GetComponent<Enemy>().currentState = EnemyState.stagger;
                     collision.GetComponent<Enemy>().Knock(hit, knockTime, damage);
                 }
 
                 if (collision.gameObject.CompareTag("Player") && collision.isTrigger)
-                {;
-                    hit.AddForce(difference, ForceMode2D.Impulse);
-                    Debug.Log(difference);
+                {
                     PlayerHealth.singleton.TakeDamage(damage);
                     hit.GetComponent<PlayerController>().state = PlayerState.stun;
-                    Debug.Log("sekarang" + hit.GetComponent<PlayerController>().state);
                     collision.GetComponent<PlayerController>().Knock(knockTime);
-                    Debug.Log("baru" + hit.GetComponent<PlayerController>().state);
                 }
             }
+            
 
         }
     }

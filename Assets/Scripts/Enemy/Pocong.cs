@@ -23,9 +23,14 @@ public class Pocong : Enemy
     public float aoeDuration = 0.5f; // Duration for which AoE is active after landing
 
 
+    [Header("kondisi Serang")]
     public Collider2D boundary;
-
     public float stateAwal;
+
+    [Header("kondisi kelar")]
+    public BoolValue pocong;
+    public GameObject portalBack;
+    public GameObject Peti;
 
     void Start()
     {
@@ -149,5 +154,15 @@ public class Pocong : Enemy
                 stateAwal = 10f;
             }
         }
+    }
+
+    public override void Die()
+    {
+        DeathEffect();
+        MakeLoot();
+        portalBack.SetActive(true);
+        Peti.SetActive(true);
+        pocong.initialValue = true;
+        Destroy(gameObject);
     }
 }

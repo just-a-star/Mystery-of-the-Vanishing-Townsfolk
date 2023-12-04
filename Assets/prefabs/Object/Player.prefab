@@ -71,7 +71,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -69320759
-  m_SortingLayer: 4
+  m_SortingLayer: 3
   m_SortingOrder: 1
   m_Sprite: {fileID: -596798749, guid: ae00fdd263f0ed647902f44221a02040, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -278,7 +278,7 @@ MonoBehaviour:
   receivedItem: {fileID: 878288292443037916}
   playerInventory: {fileID: 11400000, guid: 03de8db2243d44d40a8b801854b74e24, type: 2}
   speed: 8
-  starPos: {fileID: 11400000, guid: 729a5c879d39f834e99936add8f4d8b0, type: 2}
+  starPos: {fileID: 11400000, guid: 923531c2048ff5844833c97575b56416, type: 2}
   magicShot: {fileID: 6061520361640624045, guid: c2c5373f33fafb349af42dbc020b2290, type: 3}
   tes: {fileID: 11400000, guid: 03de8db2243d44d40a8b801854b74e24, type: 2}
   mana: {fileID: 11400000, guid: 7badb352b9a29b24c8e3a702aaf61aea, type: 2}
@@ -648,7 +648,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -69320759
-  m_SortingLayer: 4
+  m_SortingLayer: 3
   m_SortingOrder: 1
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
