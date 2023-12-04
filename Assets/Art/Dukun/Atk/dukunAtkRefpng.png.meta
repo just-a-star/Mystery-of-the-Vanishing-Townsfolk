@@ -1,0 +1,559 @@
+fileFormatVersion: 2
+guid: 2e62e3884200c8e4196f1c6ff138de23
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 300
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: dukunAtkRefpng_0
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 3173
+        width: 496
+        height: 617
+      alignment: 9
+      pivot: {x: 0.77132577, y: 0.50262815}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33fbfb6a1778a714b9b38579200100af
+      internalID: -1918550861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dukunAtkRefpng_1
+      rect:
+        serializedVersion: 2
+        x: 1411
+        y: 3151
+        width: 559
+        height: 643
+      alignment: 9
+      pivot: {x: 0.7254689, y: 0.530259}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e435aa88404730f49895de96c730d728
+      internalID: 1238643227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dukunAtkRefpng_2
+      rect:
+        serializedVersion: 2
+        x: 2359
+        y: 3095
+        width: 346
+        height: 699
+      alignment: 9
+      pivot: {x: 0.68237025, y: 0.5668432}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea454a168c9b1ec4a9e43f66595a6b7d
+      internalID: 1565337337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dukunAtkRefpng_3
+      rect:
+        serializedVersion: 2
+        x: 3198
+        y: 3108
+        width: 354
+        height: 688
+      alignment: 9
+      pivot: {x: 0.68, y: 0.55912924}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f39eef4c3974f304ebd0498d26aa5496
+      internalID: -325541916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dukunAtkRefpng_4
+      rect:
+        serializedVersion: 2
+        x: 755
+        y: 2140
+        width: 563
+        height: 638
+      alignment: 9
+      pivot: {x: 0.24748932, y: 0.49281278}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3a96e18e3d8b724f8c29cdf910e5900
+      internalID: 903552765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dukunAtkRefpng_5
+      rect:
+        serializedVersion: 2
+        x: 1641
+        y: 2142
+        width: 490
+        height: 636
+      alignment: 9
+      pivot: {x: 0.27538463, y: 0.4883158}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aae3efcec27808f4999297c4317d97cc
+      internalID: 216018288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dukunAtkRefpng_6
+      rect:
+        serializedVersion: 2
+        x: 2422
+        y: 2120
+        width: 392
+        height: 831
+      alignment: 9
+      pivot: {x: 0.4011666, y: 0.40442497}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50a7cee5e7c905444a680bf413e18fd0
+      internalID: 997503770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dukunAtkRefpng_7
+      rect:
+        serializedVersion: 2
+        x: 2784
+        y: 2597
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85f23b99875b95246b3080a221f9cbbf
+      internalID: -417233876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dukunAtkRefpng_8
+      rect:
+        serializedVersion: 2
+        x: 3285
+        y: 2117
+        width: 360
+        height: 831
+      alignment: 9
+      pivot: {x: 0.4011666, y: 0.404425}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a470c62b058afd24093e68b2b0ce8fb9
+      internalID: 1075187641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dukunAtkRefpng_9
+      rect:
+        serializedVersion: 2
+        x: 2784
+        y: 2554
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ba0fd9bbf89e3d44be30ea42f65b4f3
+      internalID: -175401460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dukunAtkRefpng_10
+      rect:
+        serializedVersion: 2
+        x: 2784
+        y: 2521
+        width: 15
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77a57086a5ec67d4c840e9281f288318
+      internalID: -560779732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dukunAtkRefpng_11
+      rect:
+        serializedVersion: 2
+        x: 891
+        y: 1180
+        width: 487
+        height: 660
+      alignment: 9
+      pivot: {x: 0.25921154, y: 0.52900666}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c8b5ad81a5ff7342aea528c0e34001d
+      internalID: 1152492939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dukunAtkRefpng_12
+      rect:
+        serializedVersion: 2
+        x: 1626
+        y: 1182
+        width: 613
+        height: 658
+      alignment: 9
+      pivot: {x: 0.20960708, y: 0.52975696}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33d774334d6b5c945a084819a1aec41c
+      internalID: -1091126592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dukunAtkRefpng_13
+      rect:
+        serializedVersion: 2
+        x: 2398
+        y: 1175
+        width: 466
+        height: 682
+      alignment: 9
+      pivot: {x: 0.28370973, y: 0.5261009}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f0c35e982d21134babdc1fcaaf7e965
+      internalID: 1840763734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dukunAtkRefpng_14
+      rect:
+        serializedVersion: 2
+        x: 3283
+        y: 1182
+        width: 486
+        height: 674
+      alignment: 9
+      pivot: {x: 0.27306476, y: 0.5218718}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca370fdc2d4a59248bed786529003133
+      internalID: -1521207100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dukunAtkRefpng_16
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 121
+        width: 492
+        height: 671
+      alignment: 9
+      pivot: {x: 0.77479774, y: 0.52167434}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1eda11eca8c47a4ca5574b36a579877
+      internalID: 775140314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dukunAtkRefpng_17
+      rect:
+        serializedVersion: 2
+        x: 1234
+        y: 110
+        width: 655
+        height: 682
+      alignment: 9
+      pivot: {x: 0.8307416, y: 0.5283153}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 756385e32ddee8d40a35085ee48b0197
+      internalID: -1814958129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dukunAtkRefpng_18
+      rect:
+        serializedVersion: 2
+        x: 2139
+        y: 134
+        width: 533
+        height: 675
+      alignment: 9
+      pivot: {x: 0.77824247, y: 0.49817035}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acf353c5bef48b2459fd16fa2a03dae3
+      internalID: 547913762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dukunAtkRefpng_19
+      rect:
+        serializedVersion: 2
+        x: 3015
+        y: 121
+        width: 541
+        height: 694
+      alignment: 9
+      pivot: {x: 0.7725936, y: 0.5028769}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 399f7376394bece46861ed637156fab1
+      internalID: 1716632189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      dukunAtkRefpng_0: -1918550861
+      dukunAtkRefpng_1: 1238643227
+      dukunAtkRefpng_10: -560779732
+      dukunAtkRefpng_11: 1152492939
+      dukunAtkRefpng_12: -1091126592
+      dukunAtkRefpng_13: 1840763734
+      dukunAtkRefpng_14: -1521207100
+      dukunAtkRefpng_15: 893503803
+      dukunAtkRefpng_16: 775140314
+      dukunAtkRefpng_17: -1814958129
+      dukunAtkRefpng_18: 547913762
+      dukunAtkRefpng_19: 1716632189
+      dukunAtkRefpng_2: 1565337337
+      dukunAtkRefpng_3: -325541916
+      dukunAtkRefpng_4: 903552765
+      dukunAtkRefpng_5: 216018288
+      dukunAtkRefpng_6: 997503770
+      dukunAtkRefpng_7: -417233876
+      dukunAtkRefpng_8: 1075187641
+      dukunAtkRefpng_9: -175401460
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
