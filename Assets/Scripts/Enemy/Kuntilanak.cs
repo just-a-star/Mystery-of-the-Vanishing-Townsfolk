@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Kuntilanak : Enemy
 {
+    private Rigidbody2D myRigidbody;
+
     public float teleportCooldown = 5f;
     private float lastTeleportTime;
     public Transform target;
@@ -23,6 +25,8 @@ public class Kuntilanak : Enemy
 
     private Animator animator;
     private bool isTeleporting = false;
+
+    Vector2 movement;
 
     // Start is called before the first frame update
     void Start()
@@ -102,9 +106,58 @@ public class Kuntilanak : Enemy
 
 
 
-
+    void SetMovement(Vector2 direction)
+    {
+        movement = direction;
+        if (movement != Vector2.zero)
+        {
+            currentState = EnemyState.walk;
+            animator.SetFloat("Horizontal", movement.x);
+            animator.SetFloat("Vertical", movement.y);
+            animator.SetFloat("Speed", movement.sqrMagnitude);
+            animator.SetBool("isWalking", true);
+        }
+        else
+        {
+            currentState = EnemyState.idle;
+            animator.SetFloat("Speed", 0);
+            animator.SetBool("isWalking", false);
+        }
+    }
     private void MoveTowardsPlayer(Vector2 direction)
     {
-        transform.position = Vector2.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
+        if (currentState == EnemyState.walk)
+        {
+            myRigidbody.MovePosition(myRigidbody.position + movement * moveSpeed * Time.fixedDeltaTime);
+        }
     }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.layer == 3)
+        {
+            StartCoroutine(RecoverFromCollision());
+        }
+    }
+
+    IEnumerator RecoverFromCollision()
+    {
+        currentState = EnemyState.idle;
+        yield return new WaitForSeconds(0.1f);
+        currentState = EnemyState.walk;
+    }
+
+     void TransitionToMoveState() {
+        float distanceToTarget = Vector3.Distance(target.position, transform.position);
+        if (distanceToTarget > attackRadius)
+        {
+            SetMovement((target.position - transform.position).normalized);
+            currentState = EnemyState.walk;
+        }
+        else
+        {
+            SetMovement(Vector2.zero);
+            currentState = EnemyState.walk;
+        }
+
 }
