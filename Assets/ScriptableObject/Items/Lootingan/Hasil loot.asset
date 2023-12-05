@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loots:
   - barang: {fileID: 1659680927794380611, guid: 3c1d54e5690a0cb4ea1db4d0dc6e941d, type: 3}
-    lootChance: 25
+    lootChance: 45
   - barang: {fileID: 2577801495259686831, guid: c9b6c26a158fd25499dfbec525450e23, type: 3}
-    lootChance: 25
+    lootChance: 45
