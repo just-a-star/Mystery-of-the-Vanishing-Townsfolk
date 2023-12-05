@@ -80,10 +80,6 @@ public class Pocong : Enemy
                 
             } 
         }
-        else if (distanceToTarget <= attackRadius)
-        {
-            //PerformAttack();
-        }
         else
         {
             if (currentState != EnemyState.idle)
