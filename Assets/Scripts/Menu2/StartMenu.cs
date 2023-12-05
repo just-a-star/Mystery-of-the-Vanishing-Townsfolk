@@ -14,8 +14,10 @@ public class StartMenu : MonoBehaviour
     [SerializeField] float waktuNotif;
     public void StartGame()
     {
+        AudioManager.singleton.PlaySound(16);
         SaveData.singleton.ResetGame();
         SceneManager.LoadScene(NewGame);
+
     }
 
     public void loadGame()
@@ -23,9 +25,11 @@ public class StartMenu : MonoBehaviour
         SaveData.singleton.LoadGame();
         if (SaveData.singleton.AdaFile == true)
         {
+            AudioManager.singleton.PlaySound(16);
             SceneManager.LoadScene(LoadGame.initialValue);
         } else
         {
+            AudioManager.singleton.PlaySound(16);
             StartCoroutine(notifCo());
         }
         
@@ -33,6 +37,7 @@ public class StartMenu : MonoBehaviour
 
     public void Quit()
     {
+        AudioManager.singleton.PlaySound(16);
         Application.Quit();
     }
 
