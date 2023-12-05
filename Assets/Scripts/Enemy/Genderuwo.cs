@@ -18,6 +18,13 @@ public class Genderuwo : Enemy
     public float meleeAttackRadius;
 
 
+    public Collider2D boundary;
+
+    [Header("kondisi kelar")]
+    public BoolValue genderuwo;
+    public GameObject peti;
+
+
 
     void Start()
     {
@@ -45,6 +52,8 @@ public class Genderuwo : Enemy
     {
         float distanceToTarget = Vector3.Distance(target.position, transform.position);
 
+        if (boundary.OverlapPoint(target.transform.position)) { 
+
         if (distanceToTarget > attackRadius) // Outside attack radius, move towards player
         {
             Vector2 direction = (target.position - transform.position).normalized;
@@ -65,6 +74,7 @@ public class Genderuwo : Enemy
                 SetMovement(Vector2.zero); // Stop moving when attacking
                 PerformMeleeAttack();
             }
+        }
         }
     }
 
@@ -158,6 +168,15 @@ public class Genderuwo : Enemy
             SetMovement(Vector2.zero);
             currentState = EnemyState.walk;
         }
+    }
+
+    public override void Die()
+    {
+        DeathEffect();
+        MakeLoot();
+        peti.SetActive(true);
+        genderuwo.initialValue = true;
+        Destroy(gameObject);
     }
 
 
