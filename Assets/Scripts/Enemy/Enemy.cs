@@ -8,7 +8,8 @@ public enum EnemyState
     idle,
     walk,
     attack,
-    stagger
+    stagger,
+    teleport
 }
 
 public class Enemy : MonoBehaviour
@@ -139,18 +140,27 @@ public class Enemy : MonoBehaviour
 
     public void Knock(Rigidbody2D rb, float knockTime, int damage)
     {
+        Debug.Log("Knock method called on " + gameObject.name);
         StartCoroutine(KnockCo(rb, knockTime));
         TakeDamage(damage);
     }
 
     private IEnumerator KnockCo(Rigidbody2D rb, float knockTime)
     {
+        Debug.Log("KnockCo coroutine started on " + gameObject.name);
         if (rb != null)
         {
             yield return new WaitForSeconds(knockTime);
             rb.velocity = Vector2.zero;
             currentState = EnemyState.idle;
-            rb.velocity = Vector2.zero;
+            Debug.Log("Velocity reset to zero on " + gameObject.name);
+        }
+        else
+        {
+            Debug.Log("Rigidbody is null in KnockCo on " + gameObject.name);
         }
     }
+
+
+
 }

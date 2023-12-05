@@ -38,40 +38,42 @@ public class Hit : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("OnTriggerEnter2D: Collision detected with " + collision.gameObject.name);
+
         if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Player"))
         {
             Rigidbody2D hit = collision.GetComponent<Rigidbody2D>();
 
             if (hit != null)
             {
-                
-                    Vector2 difference = hit.transform.position - transform.position;
-                    difference = difference.normalized * dorongan;
+                Vector2 difference = hit.transform.position - transform.position;
+                difference = difference.normalized * dorongan;
 
                 Vector2 raycastOrigin = new Vector2(transform.position.x, transform.position.y);
-
-
                 RaycastHit2D dinding = Physics2D.Raycast(raycastOrigin, difference, 0, LayerMask.GetMask("Obstacle"));
 
-                    hit.AddForce(difference, ForceMode2D.Impulse);
-                
-
+                hit.AddForce(difference, ForceMode2D.Impulse);
+                Debug.Log("Force applied to " + collision.gameObject.name);
 
                 if (collision.gameObject.CompareTag("Enemy") && collision.isTrigger)
                 {
+                    Debug.Log("Knocking back enemy: " + collision.gameObject.name);
                     hit.GetComponent<Enemy>().currentState = EnemyState.stagger;
                     collision.GetComponent<Enemy>().Knock(hit, knockTime, damage);
                 }
 
                 if (collision.gameObject.CompareTag("Player"))
                 {
+                    Debug.Log("Player hit: " + collision.gameObject.name);
                     PlayerHealth.singleton.TakeDamage(damage);
                     hit.GetComponent<PlayerController>().state = PlayerState.stun;
                     collision.GetComponent<PlayerController>().Knock(knockTime);
                 }
             }
-            
-
+            else
+            {
+                Debug.Log("Rigidbody2D not found on " + collision.gameObject.name);
+            }
         }
     }
 
