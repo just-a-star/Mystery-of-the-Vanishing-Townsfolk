@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Kuntilanak : Enemy
 {
-    private Rigidbody2D myRigidbody;
+    public Rigidbody2D rb;
 
-    public float teleportCooldown = 5f;
+    public float teleportCooldown = 8f; // Updated teleport cooldown
     private float lastTeleportTime;
     public Transform target;
 
@@ -26,12 +26,15 @@ public class Kuntilanak : Enemy
     private Animator animator;
     private bool isTeleporting = false;
 
+
+
     Vector2 movement;
 
     // Start is called before the first frame update
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
+        rb = GetComponent<Rigidbody2D>();
         audioSource = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
         lastTeleportTime = Time.time; // Initialize lastTeleportTime
@@ -40,19 +43,19 @@ public class Kuntilanak : Enemy
     // Update is called once per frame
     void Update()
     {
-        if (boundary.OverlapPoint(target.transform.position) && !isTeleporting)
+        if (boundary.OverlapPoint(target.transform.position))
         {
             Vector2 direction = (target.position - transform.position).normalized;
 
             // Check if it's time to teleport
-            if (Time.time >= lastTeleportTime + teleportCooldown)
+            if (!isTeleporting && Time.time >= lastTeleportTime + teleportCooldown)
             {
                 StartCoroutine(TeleportRoutine(direction));
             }
-            else
+            else if (!isTeleporting) // Ensure it can move only when not teleporting
             {
-                MoveTowardsPlayer(direction);
-                UpdateAnimator(direction);
+                SetMovement(direction); // Update the movement based on direction
+
             }
         }
     }
@@ -60,75 +63,56 @@ public class Kuntilanak : Enemy
     private IEnumerator TeleportRoutine(Vector2 direction)
     {
         isTeleporting = true;
-        UpdateAnimator(Vector2.zero); // Stop movement animation
+        animator.SetBool("isTeleporting", true); // Set the isTeleporting animator parameter
+        currentState = EnemyState.teleport; // Set state to a special teleport state
+        SetMovement(Vector2.zero); // Stop movement
+        Vector2 teleportPosition = rb.position;
+        GameObject teleportEffect = Instantiate(teleportEffectPrefab, teleportPosition, Quaternion.identity);
 
         // Start the teleportation coroutine
-        yield return StartCoroutine(TeleportBehindPlayer(direction));
+        yield return StartCoroutine(TeleportBehindPlayer(direction, teleportEffect));
 
-        yield return new WaitForSeconds(1); // Additional wait after teleporting, if needed
+        yield return new WaitForSeconds(1); // Additional wait after teleporting
 
         lastTeleportTime = Time.time; // Update lastTeleportTime after teleportation
         isTeleporting = false;
+        animator.SetBool("isTeleporting", false); // Reset the isTeleporting animator parameter
+        currentState = EnemyState.walk; // Reset state to walk
     }
 
-    private void UpdateAnimator(Vector2 direction)
+    private IEnumerator TeleportBehindPlayer(Vector2 direction,GameObject teleportEffect)
     {
-        animator.SetFloat("Horizontal", direction.x);
-        animator.SetFloat("Vertical", direction.y);
-        animator.SetFloat("Speed", direction.sqrMagnitude);
-    }
-
-    private bool HasLineOfSightToPlayer()
-    {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, target.position - transform.position, Vector3.Distance(transform.position, target.position));
-        if (hit.collider != null && hit.collider.CompareTag("Player"))
-        {
-            return true;
-        }
-        return false;
-    }
-
-    private IEnumerator TeleportBehindPlayer(Vector2 direction)
-    {
+        yield return new WaitForSeconds(2f);
         Vector3 teleportPosition = target.position - new Vector3(direction.x, direction.y, 0) * 2; // Teleport 2 units behind player
 
         // Move Kuntilanak to the new position immediately
         transform.position = teleportPosition;
 
-        // Wait for 0.5 seconds before playing the effects and sound
-        yield return new WaitForSeconds(0.5f);
+        Destroy(teleportEffect, 0.5f);
 
-        // Play teleportation effects and sound
-        Instantiate(teleportEffectPrefab, teleportPosition, Quaternion.identity);
-        audioSource.PlayOneShot(teleportSound);
+       
     }
-
-
-
 
     void SetMovement(Vector2 direction)
     {
-        movement = direction;
-        if (movement != Vector2.zero)
+        if (currentState != EnemyState.stagger) // Ensure not to move if staggered
         {
-            currentState = EnemyState.walk;
-            animator.SetFloat("Horizontal", movement.x);
-            animator.SetFloat("Vertical", movement.y);
-            animator.SetFloat("Speed", movement.sqrMagnitude);
-            animator.SetBool("isWalking", true);
-        }
-        else
-        {
-            currentState = EnemyState.idle;
-            animator.SetFloat("Speed", 0);
-            animator.SetBool("isWalking", false);
-        }
-    }
-    private void MoveTowardsPlayer(Vector2 direction)
-    {
-        if (currentState == EnemyState.walk)
-        {
-            myRigidbody.MovePosition(myRigidbody.position + movement * moveSpeed * Time.fixedDeltaTime);
+            movement = direction;
+            if (movement != Vector2.zero && !isTeleporting)
+            {
+                Vector2 newPosition = rb.position + movement * moveSpeed * Time.fixedDeltaTime;
+                rb.MovePosition(newPosition);
+                currentState = EnemyState.walk;
+                animator.SetFloat("Horizontal", movement.x);
+                animator.SetFloat("Vertical", movement.y);
+                animator.SetFloat("Speed", movement.sqrMagnitude);
+                animator.SetBool("isWalking", true);
+            }
+            else
+            {
+                animator.SetFloat("Speed", 0);
+                animator.SetBool("isWalking", false);
+            }
         }
     }
 
@@ -140,12 +124,6 @@ public class Kuntilanak : Enemy
         }
     }
 
-    IEnumerator RecoverFromCollision()
-    {
-        currentState = EnemyState.idle;
-        yield return new WaitForSeconds(0.1f);
-        currentState = EnemyState.walk;
-    }
 
     public override void Die()
     {
