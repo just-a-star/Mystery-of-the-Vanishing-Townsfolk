@@ -339,6 +339,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2e607f2f5eb93ab43accb147e6b569a3, type: 2}
   - {fileID: 11400000, guid: c433d7bcbe4bd8548872646292e25763, type: 2}
   - {fileID: 11400000, guid: 9c879eca56d8c9f4ab5c7cf3a1e379d6, type: 2}
+  - {fileID: 11400000, guid: 7b38af0636d69ec41b3b71c6266503f4, type: 2}
+  - {fileID: 11400000, guid: 5ffb5b5a92e7484469c96345f7795c4b, type: 2}
+  - {fileID: 11400000, guid: bdc21027593e01642881d82b076bf1f9, type: 2}
   AdaFile: 0
   jarakTarget: 5
   DialogBox: {fileID: 9016711615124491664}

@@ -134,7 +134,7 @@ public class Kuntilanak : Enemy
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.layer == 3)
+        if (collision.gameObject.layer == 3)
         {
             StartCoroutine(RecoverFromCollision());
         }
@@ -147,17 +147,30 @@ public class Kuntilanak : Enemy
         currentState = EnemyState.walk;
     }
 
-     void TransitionToMoveState() {
-        float distanceToTarget = Vector3.Distance(target.position, transform.position);
-        if (distanceToTarget > attackRadius)
-        {
-            SetMovement((target.position - transform.position).normalized);
-            currentState = EnemyState.walk;
-        }
-        else
-        {
-            SetMovement(Vector2.zero);
-            currentState = EnemyState.walk;
-        }
+    public override void Die()
+    {
+        DeathEffect();
+        MakeLoot();
+        portalBack.SetActive(true);
+        Peti.SetActive(true);
+        kuntilanak.initialValue = true;
+        Destroy(gameObject);
 
+    }
+
+    /* void TransitionToMoveState()
+     {
+         float distanceToTarget = Vector3.Distance(target.position, transform.position);
+         if (distanceToTarget > attackRadius)
+         {
+             SetMovement((target.position - transform.position).normalized);
+             currentState = EnemyState.walk;
+         }
+         else
+         {
+             SetMovement(Vector2.zero);
+             currentState = EnemyState.walk;
+         }
+
+     }*/
 }

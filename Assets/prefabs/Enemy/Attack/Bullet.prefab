@@ -131,7 +131,7 @@ MonoBehaviour:
   direction: {x: 0, y: 0}
   damage: 2
   rb: {fileID: -494785234334875025}
-  stunTime: 1
+  stunTime: 0.5
 --- !u!95 &1557498544038119577
 Animator:
   serializedVersion: 5

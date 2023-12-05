@@ -105,7 +105,7 @@ public class PlayerController : MonoBehaviour
             }
             else if(state == PlayerState.walk || state == PlayerState.idle)
             {
-
+                
                 animasi();
 
             }
@@ -168,6 +168,7 @@ public class PlayerController : MonoBehaviour
 
     void inputJalan()
     {
+        
         moveSpeed = Vector2.zero;
         moveSpeed.x = Input.GetAxisRaw("Horizontal");
         moveSpeed.y = Input.GetAxisRaw("Vertical");
@@ -178,7 +179,6 @@ public class PlayerController : MonoBehaviour
     {
         if(moveSpeed != Vector2.zero)
         {
-            
             move();
             moveSpeed.x = Mathf.Round(moveSpeed.x);
             moveSpeed.y = Mathf.Round(moveSpeed.y);

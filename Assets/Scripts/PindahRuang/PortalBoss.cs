@@ -52,6 +52,7 @@ public class PortalBoss : MonoBehaviour
         {
             if (key.initialValue == true)
             {
+                Debug.Log("keubah g");
                 StartCoroutine(ubahScene());
 
             } else

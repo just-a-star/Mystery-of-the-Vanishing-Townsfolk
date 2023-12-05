@@ -57,7 +57,7 @@ public class Hit : MonoBehaviour
                 
 
 
-                if (collision.gameObject.CompareTag("Enemy") && collision.isTrigger)
+                if (collision.gameObject.CompareTag("Enemy"))
                 {
                     hit.GetComponent<Enemy>().currentState = EnemyState.stagger;
                     collision.GetComponent<Enemy>().Knock(hit, knockTime, damage);
