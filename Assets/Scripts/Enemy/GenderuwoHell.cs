@@ -21,6 +21,8 @@ public class GenderuwoHell : Enemy
 
     public Collider2D boundary;
 
+    public Collider2D attacker;
+
     [Header("kondisi kelar")]
     public string end;
 
@@ -60,21 +62,15 @@ public class GenderuwoHell : Enemy
                 Vector2 direction = (target.position - transform.position).normalized;
                 SetMovement(direction);
             }
-            else if (distanceToTarget > meleeAttackRadius) // Within ranged attack radius, but outside melee attack radius
+            else if (attacker.OverlapPoint(target.transform.position))
             {
-                if (currentState != EnemyState.attack)
-                {
-                    SetMovement(Vector2.zero); // Stop moving when attacking
-                    PerformRangedAttack();
-                }
+                SetMovement(Vector2.zero);
+                PerformMeleeAttack();
             }
-            else // Within melee attack radius
+            else
             {
-                if (currentState != EnemyState.attack)
-                {
-                    SetMovement(Vector2.zero); // Stop moving when attacking
-                    PerformMeleeAttack();
-                }
+                SetMovement(Vector2.zero);
+                PerformRangedAttack();
             }
         }
     }

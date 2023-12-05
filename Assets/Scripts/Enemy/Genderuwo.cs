@@ -20,6 +20,8 @@ public class Genderuwo : Enemy
 
     public Collider2D boundary;
 
+    public Collider2D attacker;
+
     [Header("kondisi kelar")]
     public BoolValue genderuwo;
     public GameObject peti;
@@ -59,7 +61,17 @@ public class Genderuwo : Enemy
             Vector2 direction = (target.position - transform.position).normalized;
             SetMovement(direction);
         }
-        else if (distanceToTarget > meleeAttackRadius) // Within ranged attack radius, but outside melee attack radius
+        else if(attacker.OverlapPoint(target.transform.position))
+            {
+                SetMovement(Vector2.zero);
+                PerformMeleeAttack();
+            }
+        else
+            {
+                SetMovement(Vector2.zero);
+                PerformRangedAttack();
+            }
+        /*else if (distanceToTarget > meleeAttackRadius) // Within ranged attack radius, but outside melee attack radius
         {
             if (currentState != EnemyState.attack)
             {
@@ -74,7 +86,7 @@ public class Genderuwo : Enemy
                 SetMovement(Vector2.zero); // Stop moving when attacking
                 PerformMeleeAttack();
             }
-        }
+        }*/
         }
     }
 

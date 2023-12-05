@@ -78,18 +78,29 @@ public class Hit : MonoBehaviour
     }
 
 
-
-    private void OnCollisionStay2D(Collision2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player")) { 
-        isTouching = true;
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            isTouching = true;
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            isTouching = false;
+        }
+    }
+
+    /*private void OnCollisionStay2D(Collision2D collision)
+    {
+        
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if(collision.gameObject.CompareTag("Player")) { 
-        isTouching = false;
-        }
-    }
+       
+    }*/
 }
