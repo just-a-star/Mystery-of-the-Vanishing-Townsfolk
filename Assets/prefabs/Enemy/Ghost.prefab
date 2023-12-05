@@ -76,7 +76,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 597007697
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 081c27eef5fea2440aa3c57727e72cb6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -127,7 +127,7 @@ MonoBehaviour:
   holder: {fileID: 0}
   healthUI: {fileID: 0}
   moveSpeed: 1
-  deathEffect: {fileID: 672477544100416043, guid: 85ae25cd0d29bba4288722d7a84db462, type: 3}
+  deathEffect: {fileID: 6195399598261792147, guid: 3f54461f11d0f494e9fb5a3deec21e6f, type: 3}
   lutingan: {fileID: 11400000, guid: 51fb81afbe3856242907e5daba20291a, type: 2}
   flashLength: 0.5
   enemySprite: {fileID: 6640801378956701683}
