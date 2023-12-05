@@ -63,7 +63,7 @@ public class Hit : MonoBehaviour
                     collision.GetComponent<Enemy>().Knock(hit, knockTime, damage);
                 }
 
-                if (collision.gameObject.CompareTag("Player") && collision.isTrigger)
+                if (collision.gameObject.CompareTag("Player"))
                 {
                     PlayerHealth.singleton.TakeDamage(damage);
                     hit.GetComponent<PlayerController>().state = PlayerState.stun;
@@ -74,6 +74,7 @@ public class Hit : MonoBehaviour
 
         }
     }
+
 
 
     private void OnCollisionStay2D(Collision2D collision)

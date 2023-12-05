@@ -173,9 +173,6 @@ public class GenderuwoHell : Enemy
 
     public override void Die()
     {
-        DeathEffect();
-        MakeLoot();
-        Destroy(gameObject);
         SceneManager.LoadScene(end);
     }
 
