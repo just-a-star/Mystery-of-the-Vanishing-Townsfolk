@@ -38090,15 +38090,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 514657488163330450, guid: 769c3d1325242ee4eb0e70954a2a5c3d, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 514657488163330450, guid: 769c3d1325242ee4eb0e70954a2a5c3d, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 514657488163330450, guid: 769c3d1325242ee4eb0e70954a2a5c3d, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 514657488163330450, guid: 769c3d1325242ee4eb0e70954a2a5c3d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -38195,19 +38195,17 @@ MonoBehaviour:
   deathEffect: {fileID: 672477544100416043, guid: 85ae25cd0d29bba4288722d7a84db462, type: 3}
   lutingan: {fileID: 11400000, guid: 51fb81afbe3856242907e5daba20291a, type: 2}
   flashLength: 0.5
-  enemySprite: {fileID: 0}
+  enemySprite: {fileID: 1111296879}
   target: {fileID: 0}
   chaseRadius: 50
   attackRadius: 10
   animator: {fileID: 0}
-  bulletPrefab: {fileID: 0}
-  bulletSpawnPoint: {fileID: 0}
+  bulletPrefab: {fileID: 1909222423648383397, guid: 2edfda163aea50946a89dfe7a83d8392, type: 3}
+  bulletSpawnPoint: {fileID: 1111296880}
   bulletSpeed: 6.21
   meleeAttackRadius: 1
-  boundary: {fileID: 0}
-  genderuwo: {fileID: 0}
-  peti: {fileID: 0}
-  end: 
+  boundary: {fileID: 1218134296}
+  end: End
 --- !u!1 &1141765397
 GameObject:
   m_ObjectHideFlags: 0
@@ -78176,7 +78174,6 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1422791935}
-  - {fileID: 1059712464}
   - {fileID: 593673356}
   - {fileID: 1276899400}
   - {fileID: 1711036832}
@@ -78186,3 +78183,4 @@ SceneRoots:
   - {fileID: 510246591}
   - {fileID: 1157579309}
   - {fileID: 1218134297}
+  - {fileID: 1059712464}

@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -23,8 +22,6 @@ public class GenderuwoHell : Enemy
     public Collider2D boundary;
 
     [Header("kondisi kelar")]
-    public BoolValue genderuwo;
-    public GameObject peti;
     public string end;
 
 
@@ -178,8 +175,6 @@ public class GenderuwoHell : Enemy
     {
         DeathEffect();
         MakeLoot();
-        peti.SetActive(true);
-        genderuwo.initialValue = true;
         Destroy(gameObject);
         SceneManager.LoadScene(end);
     }
