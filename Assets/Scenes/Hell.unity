@@ -38125,6 +38125,10 @@ PrefabInstance:
       value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 6383849573044916480, guid: 769c3d1325242ee4eb0e70954a2a5c3d, type: 3}
+      propertyPath: peti
+      value: 
+      objectReference: {fileID: 1508366604}
+    - target: {fileID: 6383849573044916480, guid: 769c3d1325242ee4eb0e70954a2a5c3d, type: 3}
       propertyPath: holder
       value: 
       objectReference: {fileID: 235569654}
@@ -38140,6 +38144,10 @@ PrefabInstance:
       propertyPath: genderuwo
       value: 
       objectReference: {fileID: 11400000, guid: 5ffb5b5a92e7484469c96345f7795c4b, type: 2}
+    - target: {fileID: 6383849573044916480, guid: 769c3d1325242ee4eb0e70954a2a5c3d, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6383849573044916480, guid: 769c3d1325242ee4eb0e70954a2a5c3d, type: 3}
       propertyPath: deathEffect
       value: 
@@ -38182,7 +38190,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1059712465}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: be727188c4b88764dbea3c173930bbf3, type: 3}
   m_Name: 
@@ -38199,13 +38207,18 @@ MonoBehaviour:
   target: {fileID: 0}
   chaseRadius: 50
   attackRadius: 10
-  animator: {fileID: 0}
+  animator: {fileID: 1111296886}
   bulletPrefab: {fileID: 1909222423648383397, guid: 2edfda163aea50946a89dfe7a83d8392, type: 3}
   bulletSpawnPoint: {fileID: 1111296880}
   bulletSpeed: 6.21
   meleeAttackRadius: 1
   boundary: {fileID: 1218134296}
   end: End
+--- !u!95 &1111296886 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7354780631286998534, guid: 769c3d1325242ee4eb0e70954a2a5c3d, type: 3}
+  m_PrefabInstance: {fileID: 1059712464}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1141765397
 GameObject:
   m_ObjectHideFlags: 0
@@ -38781,6 +38794,37 @@ Transform:
   - {fileID: 320429977}
   - {fileID: 942691795}
   - {fileID: 1141765398}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1508366604
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1508366605}
+  m_Layer: 0
+  m_Name: peti
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1508366605
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1508366604}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 12.04953, y: 14.409564, z: -0.44456914}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1594136269
@@ -78184,3 +78228,4 @@ SceneRoots:
   - {fileID: 1157579309}
   - {fileID: 1218134297}
   - {fileID: 1059712464}
+  - {fileID: 1508366605}
