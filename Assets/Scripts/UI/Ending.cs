@@ -35,9 +35,7 @@ public class Ending : MonoBehaviour
 
     void OnVideoEnd(VideoPlayer vp)
     {
-        Debug.Log("Video Selesai");
-        // Tambahkan aksi yang diinginkan setelah video selesai
-        // Contoh: Pindah ke scene lain
+        SaveData.singleton.ResetGame();
         SceneManager.LoadScene("StartMenu");
     }
 }
