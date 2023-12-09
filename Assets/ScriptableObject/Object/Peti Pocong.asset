@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca3b8b9e35294df46b8987edb282f361, type: 3}
   m_Name: Peti Pocong
   m_EditorClassIdentifier: 
-  initialValue: 1
+  initialValue: 0
   defaultValue: 0

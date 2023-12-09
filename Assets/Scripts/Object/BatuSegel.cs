@@ -1,3 +1,4 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting.Antlr3.Runtime;
@@ -19,6 +20,10 @@ public class BatuSegel : Interactable
     public GameObject dialogBox;
     public Text dialogText;
     public string dialog;
+
+    [Header("ShakeCam")]
+    public CinemachineImpulseSource impulseSource;
+    public float shakeForce = 1f;
 
     private void Start()
     {
@@ -45,6 +50,7 @@ public class BatuSegel : Interactable
 
     public void buka()
     {
+        impulseSource.GenerateImpulseWithForce(shakeForce);
         gambar.enabled = false;
         kolider.enabled = false;
         pemicunya.enabled = false;

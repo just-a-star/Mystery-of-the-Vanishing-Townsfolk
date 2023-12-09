@@ -94,6 +94,7 @@ public class TreasureChest : Interactable
         if(collision.CompareTag("Player") &&  !collision.isTrigger && !isOpen)
         {
             context.SetActive(false);
+            playerInRange = false;
         }
     }
 }
