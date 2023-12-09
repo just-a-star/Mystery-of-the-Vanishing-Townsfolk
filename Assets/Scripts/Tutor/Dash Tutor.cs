@@ -24,16 +24,16 @@ public class DashTutor : MonoBehaviour
     IEnumerator gerak()
     {
         dash.SetActive(true);
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(3f);
         dash.SetActive(false);
         
     }
 
     IEnumerator serang()
     {
-        yield return new WaitForSeconds(5f);
-        atk.SetActive(true) ;
         yield return new WaitForSeconds(4f);
+        atk.SetActive(true) ;
+        yield return new WaitForSeconds(3f);
         atk.SetActive(false) ;
     }
 }
