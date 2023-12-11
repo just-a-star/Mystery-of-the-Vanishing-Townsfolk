@@ -11,14 +11,32 @@ public class DashTutor : MonoBehaviour
 
     public PlayerController pc;
 
+    bool tlEnd = false;
+
     // Start is called before the first frame update
     void Start()
     {
         pd.stopped += OnTimeLineFinished;
     }
 
+    private void Update()
+    {
+
+        if (tlEnd == true)
+        {
+            pc.state = PlayerState.walk;
+
+        }
+        else
+        {
+            pc.state = PlayerState.stun;
+        }
+
+    }
+
     void OnTimeLineFinished(PlayableDirector director)
     {
+        tlEnd = true;
         StartCoroutine(gerak());
         StartCoroutine(serang());
     }

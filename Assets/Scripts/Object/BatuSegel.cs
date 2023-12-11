@@ -31,7 +31,7 @@ public class BatuSegel : Interactable
     }
     private void Update()
     {
-        if (Input.GetButtonDown("interact") && playerInRange)
+        if (Input.GetButtonDown("interact") && playerInRange && Time.timeScale == 1)
         {
             if(playerInventory.numberOfKeys >= keyPerlu)
             {
@@ -43,7 +43,7 @@ public class BatuSegel : Interactable
             } else
             {
                 dialogBox.SetActive(true);
-                dialogText.text = dialog;
+                dialogText.text = dialog + $" ({playerInventory.numberOfKeys} / {keyPerlu})";
             }
         }
     }
