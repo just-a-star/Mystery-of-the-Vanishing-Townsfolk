@@ -304,7 +304,7 @@ public class PlayerController : MonoBehaviour
             } else
             {
                 animator.SetBool("receive items", false);
-                state = PlayerState.idle;
+                state = PlayerState.walk;
                 receivedItem.sprite = null;
             }
         }
