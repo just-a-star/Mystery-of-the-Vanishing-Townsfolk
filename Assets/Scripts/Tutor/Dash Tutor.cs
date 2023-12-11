@@ -14,7 +14,6 @@ public class DashTutor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        pc.state = PlayerState.stun;
         pd.stopped += OnTimeLineFinished;
     }
 
@@ -26,7 +25,6 @@ public class DashTutor : MonoBehaviour
 
     IEnumerator gerak()
     {
-        pc.state = PlayerState.idle;
         dash.SetActive(true);
         yield return new WaitForSeconds(3f);
         dash.SetActive(false);
