@@ -67,7 +67,7 @@ public class PortalBoss : MonoBehaviour
     {
         dialogBox.SetActive(true);
         dialogText.text = "Ambil Kunci Dahulu Sebelum Pergi";
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2);
         dialogBox.SetActive(false);
     }
 
