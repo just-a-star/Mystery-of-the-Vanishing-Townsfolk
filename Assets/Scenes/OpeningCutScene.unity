@@ -995,6 +995,7 @@ MonoBehaviour:
   bawah: {fileID: 1685770141}
   kanan: {fileID: 2121509438}
   kiri: {fileID: 897352788}
+  pc: {fileID: 1987680293}
 --- !u!1001 &807532812
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7564,6 +7565,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1987680293 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6572764580704817507, guid: 9c530e180a7ad8a4c83fef959b6ffdf2, type: 3}
+  m_PrefabInstance: {fileID: 1606996125}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b1fb83c9988744ea6642ee7e9bf232, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2010484267
 GameObject:
   m_ObjectHideFlags: 0

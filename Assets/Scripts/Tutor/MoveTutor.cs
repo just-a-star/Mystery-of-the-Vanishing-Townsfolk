@@ -12,14 +12,18 @@ public class MoveTutor : MonoBehaviour
     public GameObject kanan;
     public GameObject kiri;
 
+    public PlayerController pc;
+
     // Start is called before the first frame update
     void Start()
     {
+        pc.state = PlayerState.stun;
         pd.stopped += OnTimeLineFinished;
     }
 
     void OnTimeLineFinished(PlayableDirector director)
     {
+        
         StartCoroutine(gerak());
     }
 
@@ -29,6 +33,7 @@ public class MoveTutor : MonoBehaviour
         kanan.SetActive(true);
         kiri.SetActive(true);
         bawah.SetActive(true);
+        pc.state = PlayerState.idle;
         yield return new WaitForSeconds(2f);
         atas.SetActive(false);
         kanan.SetActive(false);

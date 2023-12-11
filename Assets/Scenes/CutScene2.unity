@@ -40876,6 +40876,7 @@ MonoBehaviour:
   pd: {fileID: 1250881127}
   dash: {fileID: 522651831}
   atk: {fileID: 1659115759}
+  pc: {fileID: 324097504593406894}
 --- !u!1 &1251501385
 GameObject:
   m_ObjectHideFlags: 0
@@ -72661,6 +72662,17 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 5315602586717900383, guid: 9c530e180a7ad8a4c83fef959b6ffdf2, type: 3}
   m_PrefabInstance: {fileID: 324097504593406892}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &324097504593406894 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6572764580704817507, guid: 9c530e180a7ad8a4c83fef959b6ffdf2, type: 3}
+  m_PrefabInstance: {fileID: 324097504593406892}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 292584357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b1fb83c9988744ea6642ee7e9bf232, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4840900675405247983
 PrefabInstance:
   m_ObjectHideFlags: 0

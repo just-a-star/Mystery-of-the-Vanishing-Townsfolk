@@ -95,9 +95,9 @@ public class PlayerController : MonoBehaviour
         else if (!isDashing)
         {
            
-            if (Input.GetButtonDown("dash") && Time.time - lastDashTime > dashCooldown && state != PlayerState.dash && state != PlayerState.interact)
+            if (Input.GetButtonDown("dash") && Time.time - lastDashTime > dashCooldown && state != PlayerState.dash && state != PlayerState.interact && state != PlayerState.idle)
             {
-                AudioManager.singleton.PlaySound(1);
+                
 
 
                 Debug.Log("Dash key pressed");
@@ -203,7 +203,6 @@ public class PlayerController : MonoBehaviour
     {
         isDashing = true;
         lastDashTime = Time.time;
-        state = PlayerState.dash;
 
         int playerLayer = LayerMask.NameToLayer("Player");
         int enemyLayer = LayerMask.NameToLayer("Musuh");
@@ -229,6 +228,12 @@ public class PlayerController : MonoBehaviour
             // Tidak ada collider yang menghalangi, jadi kita melakukan dash
             rb.velocity = dashDirection * dashSpeed;
             Debug.Log("Dash Velocity: " + rb.velocity);
+            if(rb.velocity != Vector2.zero)
+            {
+                state = PlayerState.dash;
+                AudioManager.singleton.PlaySound(1);
+            }
+
             StartCoroutine(EndDash(playerLayer, enemyLayer, ProjectileLayer));
         }
     }
