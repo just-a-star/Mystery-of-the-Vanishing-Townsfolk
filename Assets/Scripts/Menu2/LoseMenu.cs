@@ -22,10 +22,10 @@ public class LoseMenu : MonoBehaviour
 
     public void kalah()
     {
+        Time.timeScale = 0f;
         lose = true;
         losePanel.SetActive(true);
             
-            Time.timeScale = 0f;
         
     }
 
