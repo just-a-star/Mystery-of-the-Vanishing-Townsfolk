@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
@@ -10,7 +11,6 @@ public class LoseMenu : MonoBehaviour
     public static LoseMenu singleton;
     public bool lose;
     public GameObject losePanel;
-    public Button tombol;
     public string mainMenu;
 
 
@@ -24,7 +24,6 @@ public class LoseMenu : MonoBehaviour
     {
         lose = true;
         losePanel.SetActive(true);
-        tombol.Select();
             
             Time.timeScale = 0f;
         

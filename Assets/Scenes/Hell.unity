@@ -29053,6 +29053,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1111296880}
     m_Modifications:
+    - target: {fileID: 455533876573105915, guid: 4cd6a3f81a783eb41a563972b9fe63c2, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -7.9310303
+      objectReference: {fileID: 0}
     - target: {fileID: 1679776380398037584, guid: 4cd6a3f81a783eb41a563972b9fe63c2, type: 3}
       propertyPath: m_Name
       value: HUD Boss
@@ -30537,11 +30541,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 235569653}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -388, y: -520}
-  m_SizeDelta: {x: 720, y: 720}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -405, y: -351}
+  m_SizeDelta: {x: -1336.531, y: 720}
+  m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &370038966
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -95,7 +95,7 @@ public class PlayerController : MonoBehaviour
         else if (!isDashing)
         {
            
-            if (Input.GetButtonDown("dash") && Time.time - lastDashTime > dashCooldown && state != PlayerState.dash && state != PlayerState.interact && state != PlayerState.idle)
+            if (Input.GetButtonDown("dash") && Time.time - lastDashTime > dashCooldown && state != PlayerState.dash && state != PlayerState.interact)
             {
                 
 

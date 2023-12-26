@@ -25859,6 +25859,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 402257210243390016, guid: 927152ee56efaeb4183178665ca9f716, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 402257210243390016, guid: 927152ee56efaeb4183178665ca9f716, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 699094766}
+    - target: {fileID: 402257210243390016, guid: 927152ee56efaeb4183178665ca9f716, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: QuitToMain
+      objectReference: {fileID: 0}
+    - target: {fileID: 402257210243390016, guid: 927152ee56efaeb4183178665ca9f716, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: LoseMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 402257210243390016, guid: 927152ee56efaeb4183178665ca9f716, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 5241910798876534849, guid: 927152ee56efaeb4183178665ca9f716, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -25948,6 +25968,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 927152ee56efaeb4183178665ca9f716, type: 3}
+--- !u!114 &699094766 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7975514490807951845, guid: 927152ee56efaeb4183178665ca9f716, type: 3}
+  m_PrefabInstance: {fileID: 699094765}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad1a4a7b322a4904fb539a9ae30e7702, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &715851332 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7735059326650308522, guid: 89d8028f9c514d34eb03b0a763a1824b, type: 3}
